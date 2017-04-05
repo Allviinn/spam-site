@@ -5,8 +5,8 @@ $('#submit').on('click', function(event) {
 	event.preventDefault();
 
 	var numero = $('#numero').val();
-	var type = $('#selectType option:selected').val();
-    var qualite = $('#selectQualite option:selected').val();
+    var type = $(".message_pri:checked").val();
+    var qualite =$(".message:checked").val();
 	var commentaire = $('#commentaire').val();
     var email = $('#email').val();
     var pseudo = $('#pseudo').val();
