@@ -24,8 +24,8 @@
             
            
             <label>Commentaire : </label><textarea cols="50" rows="6" name="commentaire" id="commentaire"></textarea><br><br><br>
-            <label>Qualité:</label><input type="radio" name="type" value="Sms" class="message_pri"> Positif<br>
-            <label>&nbsp;</label><input type="radio" name="type" value="Appel" class="message_pri"> Négatif<br><br>
+            <label>Qualité:</label><input type="radio" name="qualite" value="positif" class="message"> Positif<br>
+            <label>&nbsp;</label><input type="radio" name="qualite" value="negatif" class="message"> Négatif<br><br>
             
             <label>Votre e-mail : </label><input type="text" name="email" id="email"><br><br><br>
             <label>Sous quelle pseudonyme voulez-vous que les autre vous voient :  </label><br><input type="text" name="pseudo" id="pseudo">
@@ -36,6 +36,6 @@
         </form>
 
         <a href="test">Lien de test vers une autre page</a>
-        <script type="text/javascript" src="{{ URL::to('js/test.js') }}"></script>
+        <script type="text/javascript" src="{{ URL::to('js/welcome.js') }}"></script>
     </body>
 </html>
