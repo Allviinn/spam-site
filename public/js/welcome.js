@@ -13,7 +13,7 @@ $('#submit').on('click', function(event) {
 
 	$.ajax({
     	    	type:'POST',
-    	    	url:'http://mujkic.chalon.codeur.online/apiSpamfaitMaison/apiSpam.php',
+    	    	url:'http://mujkic.chalon.codeur.online/spam-API/apiSpam.php',
     	    	crossDomain: true,
     	   		data: { "numero": numero, 
                         "type": type, 
