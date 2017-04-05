@@ -15,6 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
+Route::get('ajoutNumero', 'Controller@index');
 
