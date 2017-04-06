@@ -9,7 +9,24 @@ header {
 	background-color: white;
 	margin: 0px;
 	padding-left: 0px;
-	padding-right: 20px;
+	padding-right: 0px;
+}
+
+header a {
+	display: block;
+	text-decoration: none;
+	text-align: right;
+	color: #c6002b;
+	font-weight: bold;
+}
+
+#headerDiv2 {
+	margin-top: 10px;
+}
+
+header a:hover {
+	text-decoration: none;
+	color: #c6002b;
 }
 
 #sectionAccueil {
@@ -23,6 +40,7 @@ header {
 #sectionAjout {
 	background-color: #FFFFFF;
 	text-align: center;
+	padding-bottom: 20px;
 }
 
 #sectionAjout h4 {

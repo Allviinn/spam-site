@@ -14,8 +14,8 @@
         <header>
             <div class="container-fluid">
                 <div class="row">
-                <div class="col-xs-2"><img src="graphisme/graphismes/images/icone-logo-rouge.png" width="50"></div>
-                <div class="col-xs-offset-8 col-xs-2"><img src="graphisme/graphismes/images/menuburger.png" width="40"></div>
+                <div class="col-xs-1"><a href="/"><img src="graphisme/graphismes/images/icone-logo-rouge.png" width="50"></a></div>
+                <div id="headerDiv2" class="col-xs-offset-5 col-xs-5"><a href="#">UN SPAM?</a></div>
                 </div>
             </div>
         </header>
