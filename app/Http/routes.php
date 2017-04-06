@@ -16,4 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('ajoutNumero', 'Controller@index');
+Route::post('traitement','validation@validation');
 
