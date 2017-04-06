@@ -6,3 +6,43 @@ label{
         
         
 }
+
+header{
+    height:100px;
+    background-color: #c6002b;
+}
+
+#h1{
+    
+    font-size: 45px;
+    color:#5e000e;
+    text-align: center;
+   
+}
+
+
+.input{
+    border-radius: 10px;
+    min-height: 40px;
+    border:1px solid #3c3c3b;
+    width: 300px;
+  
+}
+
+form{
+    text-align: center;
+   
+    margin-top: 30px;
+    
+}
+.bouton{
+    
+width: 150px;
+height: 50px;
+border-radius: 20px;
+border:1px solid #5e000e;
+background-color: #5e000e;
+color: aliceblue;
+    
+    
+}

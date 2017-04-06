@@ -13,15 +13,17 @@ $('#submit').on('click', function(event) {
 
 	$.ajax({
     	    	type:'POST',
-    	    	url:'http://mujkic.chalon.codeur.online/spam-API/numeroSpam.php',
-    	    	crossDomain: true,
-    	   		data: { "numero": numero, 
+    	    	url:'traitement',
+    	    	//crossDomain: true,
+    	   		data: { 
+                        "numero": numero, 
                         "type": type, 
                         "qualite": qualite,
                         "commentaire": commentaire,
                         "email": email,
                         "pseudo": pseudo, 
-                        "_token": $('#token').attr('value') },
+                        "_token": $('#token').attr('value') 
+                },
 
     	    	success: function(data){
     	    	    console.log(data);
