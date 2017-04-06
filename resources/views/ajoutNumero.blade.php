@@ -22,23 +22,26 @@
         <h1 id="h1">Déclarer un numéro</h1>
         
         <div id="form">
-        <form>
+        <form action="traitement" method="post">
 
            <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : 0931235860"><br><br>
+            {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
            
             <input type="text" placeholder=" Votre pseudo" name="pseudo" id="pseudo"class="input" ><br><br>
+              {!! $errors->first('pseudo', '<small class="help-block">:message</small>') !!}<br>
             
              <input type="text" placeholder=" Votre email (exemple@gmaol.com) " name="email" id="email"class="input" ><br><br>
+              {!! $errors->first('email', '<small class="help-block">:message</small>') !!}<br>
             
             
           
           <input type="radio" name="type" value="Sms" class="message_pri"> Sms &nbsp;&nbsp;
           <input type="radio" name="type" value="Appel" class="message_pri"> Appel<br><br>
+          {!! $errors->first('type', '<small class="help-block">:message</small>') !!}<br>
             
            
            <textarea cols="50" rows="6" name=" commentaire" id="commentaire" class="input" placeholder=" Votre commentaire" ></textarea><br><br>
-           <input type="radio" name="qualite" value="positif" class="message"> Positif &nbsp;&nbsp;
-          <input type="radio" name="qualite" value="negatif" class="message"> Négatif<br><br>
+            {!! $errors->first('commentaire', '<small class="help-block">:message</small>') !!}<br>
             
            
           
@@ -52,7 +55,9 @@
         
         </div>
 
+<!--
         <a href="test">Lien de test vers une autre page</a>
         <script type="text/javascript" src="{{ URL::to('js/welcome.js') }}"></script>
+-->
     </body>
 </html>

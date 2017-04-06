@@ -14,14 +14,16 @@ $('#submit').on('click', function(event) {
 	$.ajax({
     	    	type:'POST',
     	    	url:'traitement',
-    	    	crossDomain: true,
-    	   		data: { "numero": numero, 
+    	    	//crossDomain: true,
+    	   		data: { 
+                        "numero": numero, 
                         "type": type, 
                         "qualite": qualite,
                         "commentaire": commentaire,
                         "email": email,
                         "pseudo": pseudo, 
-                        "_token": $('#token').attr('value') },
+                        "_token": $('#token').attr('value') 
+                },
 
     	    	success: function(data){
     	    	    console.log(data);
