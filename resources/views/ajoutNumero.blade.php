@@ -22,7 +22,7 @@
         <h1 id="h1">Déclarer un numéro</h1>
         
         <div id="form">
-        <form method='post' action="traitement" >
+        <form>
 
            <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : 0931235860"><br><br>
            
