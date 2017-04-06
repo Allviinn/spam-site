@@ -11,6 +11,7 @@ use App\spam_commentaires;
 class morgane extends Controller
 {
   public function rechercheNumero(Request $request){
+
     $numero = new spam_numeros;
     $numRecherche = $request->input('numeroRecherche');
     $numeros = $numero::select('*')
@@ -30,5 +31,6 @@ class morgane extends Controller
     ->get();
 
     return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires));
+
   }
 }
