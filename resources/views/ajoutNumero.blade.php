@@ -23,6 +23,14 @@
         
         <div id="form">
         <form action="traitement" method="post">
+           
+            <select name="genre" id="genre" >
+
+                 @foreach ($prefix as $code)
+                 <option value="{{$code->pays}}">{{$code->code}}</option>
+                 @endforeach
+                 
+            </select>
 
            <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : 0931235860"><br><br>
             {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
