@@ -29,6 +29,18 @@ header a:hover {
 	color: #c6002b;
 }
 
+#headerRecherche {
+	border-radius: 6px;
+	background-color: #C4C4C4;
+	border: none;
+	width: 130px;
+	padding: 5px;
+}
+
+#headerDiv3 {
+	margin-top: 5px;
+}
+
 #sectionAccueil {
 	position: relative;
 }
@@ -40,7 +52,6 @@ header a:hover {
 #sectionAjout {
 	background-color: #FFFFFF;
 	text-align: center;
-	padding-bottom: 20px;
 }
 
 #sectionAjout h4 {
@@ -56,6 +67,7 @@ header a:hover {
 	padding-top: 20px;
 	padding-bottom: 10px;
 	box-shadow: 0px 0px 10px black;
+	margin: 5px;
 }
 
 
@@ -72,8 +84,8 @@ header a:hover {
 	background-color: #5e0d0e;
 	padding-top: 20px;
 	padding-bottom: 10px;
-	margin-top: 15px;
 	box-shadow: 0px 0px 10px black;
+	margin: 5px;
 }
 
 #articleRecherche p {
@@ -93,12 +105,9 @@ header a:hover {
 	transition: opacity 1s;
 }
 
-@media screen and (min-width: 470px) { 			/* largeur mobile */
+@media screen and (min-width: 576px) { 			/* largeur mobile */
 
-  	#sectionAccueil img {
-		width: 80%;
-		margin-left: 10%;
-	}
+  	
 
 }
 

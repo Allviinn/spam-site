@@ -10,4 +10,18 @@ $(document).ready(function() {
 	});
 
 
+	$(window).resize(function() {
+
+		var largeur = $(window).width();
+	
+		if(largeur < 576) {
+			$('#sectionAccueil img').attr('src' , 'graphisme/graphismes/images/fond-accueil-mobile2.png');
+		} else {
+			$('#sectionAccueil img').attr('src' , 'graphisme/graphismes/images/fond-accueil2.png');
+		}
+
+
+	})
+
+
 });
