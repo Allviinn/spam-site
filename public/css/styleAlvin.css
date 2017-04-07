@@ -135,6 +135,7 @@ header a:hover {
 	border: none;
 	background-color: #c6002b;
 	color: white;
+	cursor: pointer;
 }
 
 @media screen and (min-width: 576px) { 			/* largeur mobile */
