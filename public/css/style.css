@@ -7,9 +7,29 @@ label{
         
 }
 
-header{
-    height:100px;
+header {
+
+    padding-top: 5px;
+    padding-bottom: 5px;
     background-color: #c6002b;
+}
+
+#headerDiv2 {
+    margin-top: 10px;
+    text-align: left;
+}
+
+header a {
+    display: block;
+    text-decoration: none;
+    text-align: right;
+    color: white;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: white;
+    text-decoration: none;
 }
 
 #h1{
@@ -45,4 +65,12 @@ background-color: #5e000e;
 color: aliceblue;
     
     
+}
+
+@media screen and (min-width: 992px) {          /* largeur mobile */
+    
+    #headerDiv2 {
+        font-size: 20px;
+    }
+
 }
