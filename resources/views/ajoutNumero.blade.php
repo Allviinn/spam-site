@@ -27,7 +27,7 @@
             <select name="genre" id="genre" >
 
                  @foreach ($prefix as $code)
-                 <option value="{{$code->pays}}">{{$code->code}}</option>
+                 <option value="{{$code->pays}}">+{{$code->code}}</option>
                  @endforeach
                  
             </select>

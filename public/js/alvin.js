@@ -6,6 +6,8 @@ $(document).ready(function() {
 		e.preventDefault();
 
 			$("#formRechercheNum").css({ "opacity":"0","display":"block"}).show().animate({opacity:1})
+            
+       
 	
 	});
 
