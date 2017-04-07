@@ -18,19 +18,28 @@ class morgane extends Controller
         ->where('numero', $numRecherche)
         ->get();
 
-    $numerosId = $numero::select('id')
+
+    if (count($numeros) >= 1){
+
+      $numerosId = $numero::select('id')
         ->where('numero', '=', $numRecherche)
         ->first();
-    $idNumero = $numerosId->id;
+      $idNumero = $numerosId->id;
 
-    $commentaire = new spam_commentaires;
-    $commentaires = $commentaire::
-    join('spam_numeros','spam_commentaires.id_spam_numeros','=','spam_numeros.id')
-    ->select('spam_commentaires.*')
-    ->where('spam_commentaires.id_spam_numeros',$idNumero)
-    ->get();
+      $commentaire = new spam_commentaires;
+      $commentaires = $commentaire::
+      join('spam_numeros','spam_commentaires.id_spam_numeros','=','spam_numeros.id')
+      ->select('spam_commentaires.*')
+      ->where('spam_commentaires.id_spam_numeros',$idNumero)
+      ->get();
 
-    return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires));
+      return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires));
+    }
+    else {
+
+      return view('recherche', array("numeros"=>$numeros));
+
+    }
 
   }
 }
