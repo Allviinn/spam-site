@@ -17,8 +17,10 @@
       <p>{{$numero->numero}}</p>
     @endforeach
 
+
     @foreach($commentaires as $key => $commentaire)
-      <p>{{$commentaire->commentaire}}</p>
+    <p>AUTEUR</p><p>{{$commentaire->pseudoAuteur}}</p>
+      <p>COMMENTAIRE</p><p>{{$commentaire->commentaire}}</p>
     @endforeach
 
   @else
