@@ -27,23 +27,26 @@
 
         <section id="sectionAjout" class="container">
             <div class="row">
-            <h4 class="col-xs-12">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
+                <h4 class="col-xs-12">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
 
-            <a href="ajoutNumero" id="lienAjoutNumero"><article id="articleAjout" class="col-xs-offset-1 col-xs-10">
-                
-                <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
-                <p>Vous souhaitez déclarer un SMS ou un appel comme indésirable?</p>
-                
-
-            </article></a>
+                <a href="ajoutNumero" id="lienAjoutNumero">
+                    <article id="articleAjout" class="col-xs-offset-1 col-xs-10 col-sm-6">
+                    
+                    <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
+                    <p>Vous souhaitez déclarer un SMS ou un appel comme indésirable?</p>
+                    
+                    </article>
+                </a>
             </div>
             <div class="row">
-            <a href="" id="lienRechercheNum"><article id="articleRecherche" class="col-xs-offset-1 col-xs-10">
-
-                <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
-                <p>Vous souhaitez rechercher un numéro?</p>
-
-            </article></a>
+                <a href="" id="lienRechercheNum">
+                    <article id="articleRecherche" class="col-xs-offset-1 col-xs-10 col-sm-6">
+        
+                        <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
+                        <p>Vous souhaitez rechercher un numéro?</p>
+        
+                    </article>
+                </a>
             </div>
         </section>
 

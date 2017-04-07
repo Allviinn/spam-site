@@ -23,26 +23,26 @@ class validation extends Controller
 		$qualite = $request->input('qualite');
 		$commentaire = $request->input('commentaire');
 		$email = $request->input('email');
-		$pseudo = $request->input('pseudo');;
+		$pseudo = $request->input('pseudo');
 		$today = getdate();
 		$date = date("m/d/Y h:i:s a", time());   
         
         
-    $numeros = new spam_numeros;   
-    $auteurs = new spam_auteurs;   
-    $commentaires = new spam_commentaires;   
+        $numeros = new spam_numeros;   
+        $auteurs = new spam_auteurs;   
+        $commentaires = new spam_commentaires;   
         
-    $insertionAuteur =  $auteurs ::insertGetId(
-                ['pseudo' => $pseudo,'email' =>$email]
+        $insertionAuteur =  $auteurs::insertGetId(
+                ['pseudo' => $pseudo,'email' => $email]
             );     
         
-    $idnum = $numeros::select('id')
+        $idnum = $numeros::select('id')
             ->where('numero', '=', $numero)
             ->first();
     
-    if(!isset($idnum->id)){
+        if(!isset($idnum->id)){
         
-        $insertionNmero =  $numeros ::insertGetId(
+            $insertionNmero =  $numeros::insertGetId(
                 ['numero' => $numero,
                  'type' =>$type,
                  'date_ajout' =>$date,
@@ -51,7 +51,7 @@ class validation extends Controller
                 ]
             ); 
         
-        $insertioncommentaire = $commentaires ::insert(
+            $insertioncommentaire = $commentaires::insert(
                 ['commentaire' => $commentaire,
                  'date_commentaire' =>$date,
                  'id_spam_auteurs' =>$insertionAuteur,
@@ -60,9 +60,9 @@ class validation extends Controller
                 ]
             );         
      
-    } else {
+        } else {
         
-        $insertioncommentaire = $commentaires ::insert(
+            $insertioncommentaire = $commentaires::insert(
                 ['commentaire' => $commentaire,
                  'date_commentaire' =>$date,
                  'id_spam_auteurs' =>$insertionAuteur,
@@ -71,10 +71,8 @@ class validation extends Controller
                 ]
             );             
         
-    }
+        }
 
  
-             
-        
     }
 }
