@@ -6,28 +6,47 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="{{URL::to('css/styleRecherche.css')}}">
+  <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 
   <title>Résultat de votre recherche</title>
 </head>
 <body>
 
-  @if (count($numeros) >= 1)
+  <section>
 
-    @foreach($numeros as $key => $numero)
-      <p>{{$numero->numero}}</p>
-    @endforeach
+    <h4>Résultat de votre recherche</h4>
 
+    @if (count($numeros) >= 1)
+      <article class="numero">
+        @foreach($numeros as $key => $numero)
+          <p><strong class="numeroTel">{{$numero->numero}}</strong></p>
 
-    @foreach($commentaires as $key => $commentaire)
-    <p>AUTEUR</p><p>{{$commentaire->pseudoAuteur}}</p>
-      <p>COMMENTAIRE</p><p>{{$commentaire->commentaire}}</p>
-    @endforeach
+          <div class="bas_numero">
+            <p class="type">{{$numero->type}}</p>
+            <p><em class="nbreCommentaires">0</em> commentaires</p>
+          </div>
 
-  @else
+        @endforeach
+      </article>
 
-      <p>Pas de résultats</p>
+      @foreach($commentaires as $key => $commentaire)
+        <div class="commentaire">
 
-  @endif
+            <p><strong class="pseudo">{{$commentaire->pseudoAuteur}}</strong> a écrit :</p>
+            <p class="texteCommentaire">{{$commentaire->commentaire}}</p>
+            <p class="date">Le {{$commentaire->date_commentaire}}</p>
+            <a href="#" class="lien signalCommentaire">Signaler ce commentaire</a>
+        </div>
+      @endforeach
+
+    @else
+      <div class="commentaire">
+        <p class="aucunCommentaire">Aucun numéro ne correspond à votre recherche. Pour insérer ce numéro, <a href="ajoutNumero" class="lien">cliquez ici</a></p>
+      </div>
+
+    @endif
+
+  </section>
 
 </body>
 </html>

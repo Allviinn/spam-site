@@ -1,1 +1,90 @@
+body {
+  background-color: #e6e6e6;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
+p {
+  margin: 0;
+}
+
+section {
+  margin: auto;
+  width: 60%;
+}
+
+.lien {
+  color: #ff002b;
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+h4 {
+  background-color: #1a1a1a;
+  color: white;
+  font-size: 1.5em;
+  margin: 0;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.numero {
+  background-color: white;
+  border-bottom: 2px dotted #c6002b;
+  margin: auto;
+  padding: 10px;
+  width: 100%;
+}
+
+.numeroTel {
+  color: #c6002b;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.8em;
+}
+
+.bas_numero {
+  align-items: baseline;
+  display: flex;
+}
+
+.bas_numero p {
+  font-size: 0.9em;
+  margin-right: 20px;
+  font-weight: bold;
+}
+
+.type {
+  font-size: 3em;
+  text-transform: uppercase;
+}
+
+.nbreCommentaires {
+  color: #ff002b;
+  font-size: 2em;
+  font-style: normal;
+}
+
+.commentaire {
+  background-color: white;
+  border-bottom: 1px solid grey;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9em;
+  padding: 20px 10px 20px 10px;
+  width: 100%;
+}
+
+.texteCommentaire {
+  margin-top: 20px;
+}
+
+.date {
+  align-self: flex-end;
+  font-style: italic;
+}
+
+.signalCommentaire {
+  align-self: flex-end;
+}
