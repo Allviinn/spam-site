@@ -25,7 +25,7 @@ class validation extends Controller
 		$email = $request->input('email');
 		$pseudo = $request->input('pseudo');
 		$today = getdate();
-		$date = date("m/d/Y h:i:s a", time());   
+		$date = date("d/m/Y");   
         
         
         $numeros = new spam_numeros;   
