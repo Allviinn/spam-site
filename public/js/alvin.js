@@ -8,10 +8,12 @@ $(document).ready(function() {
 			$("#modal").show().animate({opacity:1}, 50);
     });
 
-    $('#modal').on('click', function() {
+    $('#croix').on('click', function() {
 
     	$("#modal").hide('slow').animate({opacity:0});
     });
+
+
 
     $('#submitRechercheNum').on('click', function(event) {
 

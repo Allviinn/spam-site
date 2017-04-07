@@ -51,8 +51,10 @@
             </div>
         </section>
         <div id="modal">
+
             <form id="formRechercheNum" method="post" action="recherche">
                    <h4>Rechercher un numéro</h4>
+                   <a href="#" id="croix">X</a>
                <input type="text" name="numeroRecherche" id="numeroRecherche" placeholder=" Ex : 07 86 65 78 33"><br>
                <div style="color: #c6002b; font-weight: bold" id="retourUtil"></div><br>
                <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
