@@ -7,15 +7,16 @@
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/styleAlvin.css') }}">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     </head>
     <body>
         <header>
             <div class="container-fluid">
                 <div class="row">
-                <div class="col-xs-1"><a href="/"><img src="graphisme/graphismes/images/icone-logo-rouge.png" width="50"></a></div>
-                <div id="headerDiv2" class="col-xs-offset-5 col-xs-5"><a href="#">UN SPAM?</a></div>
+                    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="/"><img src="graphisme/graphismes/images/icone-logo-rouge.png" width="50"></a></div>
+                    <div id="headerDiv2" class="offset-5 col-5 offset-sm-7 col-sm-4 offset-md-8 col-md-3 offset-lg-8 col-lg-2 offset-xl-7 col-xl-3"><a href="#">UN SPAM ?</a></div>
+                        
                 </div>
             </div>
         </header>
@@ -25,35 +26,38 @@
 
         </section>
 
-        <section id="sectionAjout" class="container">
+        <section id="sectionAjout" class="container-fluid">
             <div class="row">
-            <h4 class="col-xs-12">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
-
-            <a href="ajoutNumero" id="lienAjoutNumero"><article id="articleAjout" class="col-xs-offset-1 col-xs-10">
+                <h4 class="col-12 offset-sm-1 col-sm-10">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
                 
-                <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
-                <p>Vous souhaitez déclarer un SMS ou un appel comme indésirable?</p>
-                
+                <a href="ajoutNumero" id="lienAjoutNumero" class="col-12 col-sm-6 offset-md-1 col-md-5 offset-lg-2 col-lg-4">
+                    <article id="articleAjout">
+                    
+                    <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
+                    <p>Vous souhaitez signaler un SMS ou un appel?</p>
+                    
+                    </article>
+                </a>
+            
+                <a href="" id="lienRechercheNum" class="col-12 col-sm-6 col-md-5 col-lg-4">
+                    <article id="articleRecherche">
+        
 
-            </article></a>
-            </div>
-            <div class="row">
-            <a href="" id="lienRechercheNum"><article id="articleRecherche" class="col-xs-offset-1 col-xs-10">
+                        <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
+                        <p>Vous souhaitez rechercher un numéro?</p>
 
-                <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
-                <p>Vous souhaitez rechercher un numéro?</p>
-
-            </article></a>
+                    </article>
+                </a>
             </div>
         </section>
-
-         <form id="formRechercheNum" method="post" action="recherche">
-
-            <label>Entrez le numéro : </label><input type="text" name="numeroRecherche">
-            <input type="submit" name="submitRechercheNum" id="submitRechercheNum" value="Rechercher">
-            <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
-         </form>
-
+        <div id="modal">
+            <form id="formRechercheNum" method="post" action="recherche">
+                   <h4>Rechercher un numéro</h4>
+               <input type="text" name="numeroRecherche" id="numeroRecherche" placeholder=" Ex : 07 86 65 78 33"><br>
+               <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
+               <input type="submit" name="submitRechercheNum" id="submitRechercheNum" value="Rechercher">
+            </form>
+         </div>
         <script type="text/javascript" src="{{ URL::to('js/alvin.js') }}"></script>
     </body>
 </html>

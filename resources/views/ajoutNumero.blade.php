@@ -9,20 +9,37 @@
     
     <link href="{{ URL::to('css/style.css') }}" type="text/css" rel="stylesheet" media="screen,projection" />
     
-     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     
 
     </head>
     <body>
         
        
-        <header ></header>	
+        <header>
+          <div class="container-fluid">
+                <div class="row">
+                    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="/"><img src="graphisme/graphismes/images/icone-logo.png" width="50"></a></div>
+                    <div id="headerDiv2" class="offset-5 col-5 offset-sm-7 col-sm-4 offset-md-8 col-md-3 offset-lg-8 col-lg-2 offset-xl-7 col-xl-3"><a href="#">UN SPAM ?</a></div>
+                        
+                </div>
+            </div>
+
+        </header>	
        
 	
         <h1 id="h1">Déclarer un numéro</h1>
         
         <div id="form">
         <form action="traitement" method="post">
+           
+            <select name="genre" id="genre" >
+
+                 @foreach ($prefix as $code)
+                 <option value="{{$code->pays}}">+{{$code->code}}</option>
+                 @endforeach
+                 
+            </select>
 
            <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : 0931235860"><br><br>
             {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>

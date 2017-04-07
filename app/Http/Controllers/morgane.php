@@ -7,30 +7,39 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\spam_numeros;
 use App\spam_commentaires;
+use App\spam_auteurs;
 
 class morgane extends Controller
 {
-  public function rechercheNumero(Request $request){
-
+  public function rechercheNumero(Request $request)
+  {
     $numero = new spam_numeros;
     $numRecherche = $request->input('numeroRecherche');
     $numeros = $numero::select('*')
         ->where('numero', $numRecherche)
         ->get();
 
-    $numerosId = $numero::select('id')
+    if (count($numeros) >= 1)
+    {
+      $numerosId = $numero::select('*')
         ->where('numero', '=', $numRecherche)
         ->first();
-    $idNumero = $numerosId->id;
+      $idNumero = $numerosId->id;
 
-    $commentaire = new spam_commentaires;
-    $commentaires = $commentaire::
-    join('spam_numeros','spam_commentaires.id_spam_numeros','=','spam_numeros.id')
-    ->select('spam_commentaires.*')
-    ->where('spam_commentaires.id_spam_numeros',$idNumero)
-    ->get();
+      $commentaire = new spam_commentaires;
+      $commentaires = $commentaire::
+      join('spam_numeros','spam_commentaires.id_spam_numeros','=','spam_numeros.id')
+      ->join('spam_auteurs','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
+      ->select('spam_commentaires.*','spam_auteurs.pseudo AS pseudoAuteur')
+      ->where('spam_commentaires.id_spam_numeros',$idNumero)
+      ->get();
 
-    return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires));
-
+      // dd($commentaires);
+      return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires));
+    }
+    else
+    {
+      return view('recherche', array("numeros"=>$numeros));
+    }
   }
 }

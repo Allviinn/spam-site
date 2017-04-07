@@ -11,21 +11,23 @@
 </head>
 <body>
 
-@if (count($numeros) >= 1)
+  @if (count($numeros) >= 1)
 
-  @foreach($numeros as $key => $numero)
-    <p>{{$numero->numero}}</p>
-  @endforeach
+    @foreach($numeros as $key => $numero)
+      <p>{{$numero->numero}}</p>
+    @endforeach
 
-  @foreach($commentaires as $key => $commentaire)
-    <p>{{$commentaire->commentaire}}</p>
-  @endforeach
 
-@else
+    @foreach($commentaires as $key => $commentaire)
+    <p>AUTEUR</p><p>{{$commentaire->pseudoAuteur}}</p>
+      <p>COMMENTAIRE</p><p>{{$commentaire->commentaire}}</p>
+    @endforeach
 
-    Pas de résultats
-    
-@endif
+  @else
+
+      <p>Pas de résultats</p>
+
+  @endif
 
 </body>
 </html>
