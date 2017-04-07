@@ -25,7 +25,7 @@ class message extends Request
     {
         return [
             
-            'numero' => 'required|max:20|min:5',
+            'numero' => 'required|numeric|max:20|min:5',
             'email' => 'required|email|max:255',
             'commentaire' => 'required|max:255',
             'type' => 'required',
@@ -37,7 +37,9 @@ class message extends Request
     public function messages()
     {
         return [
+        
         'numero.required'=>"Ce champ est obligatoire",   
+        'numero.numeric'=>"Ce champ doit Être un numéro",   
         'numero.max'=>"Maximum 20 caractères",  
         'numero.min'=>"Minimum 5 caractères", 
             
