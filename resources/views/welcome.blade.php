@@ -35,21 +35,10 @@
             <div class="row">
                 <h4 class="col-12 offset-sm-1 col-sm-10">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
 
-<<<<<<< HEAD
-                <a href="ajoutNumero" id="lienAjoutNumero">
-                    <article id="articleAjout" class="col-xs-offset-1 col-xs-10 col-sm-6">
 
-                    <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
-                    <p>Vous souhaitez déclarer un SMS ou un appel comme indésirable?</p>
+            
 
-                    </article>
-                </a>
-            </div>
-            <div class="row">
-                <a href="" id="lienRechercheNum">
-                    <article id="articleRecherche" class="col-xs-offset-1 col-xs-10 col-sm-6">
 
-=======
                 <a href="ajoutNumero" id="lienAjoutNumero" class="col-12 col-sm-6">
                     <article id="articleAjout">
                     
@@ -62,7 +51,7 @@
                 <a href="" id="lienRechercheNum" class="col-12 col-sm-6">
                     <article id="articleRecherche">
         
->>>>>>> b1717d15629228185389501126670a38696a9a29
+
                         <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
                         <p>Vous souhaitez rechercher un numéro?</p>
 
