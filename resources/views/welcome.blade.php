@@ -31,20 +31,20 @@
 
                 <a href="ajoutNumero" id="lienAjoutNumero">
                     <article id="articleAjout" class="col-xs-offset-1 col-xs-10 col-sm-6">
-                    
+
                     <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
                     <p>Vous souhaitez déclarer un SMS ou un appel comme indésirable?</p>
-                    
+
                     </article>
                 </a>
             </div>
             <div class="row">
                 <a href="" id="lienRechercheNum">
                     <article id="articleRecherche" class="col-xs-offset-1 col-xs-10 col-sm-6">
-        
+
                         <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
                         <p>Vous souhaitez rechercher un numéro?</p>
-        
+
                     </article>
                 </a>
             </div>
@@ -54,7 +54,7 @@
 
             <label>Entrez le numéro : </label><input type="text" name="numeroRecherche">
             <input type="submit" name="submitRechercheNum" id="submitRechercheNum" value="Rechercher">
-            <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}"><br>
          </form>
 
         <script type="text/javascript" src="{{ URL::to('js/alvin.js') }}"></script>
