@@ -19,7 +19,10 @@
     @if (count($numeros) >= 1)
       <article class="numero">
         @foreach($numeros as $key => $numero)
-          <p><strong class="numeroTel">{{$numero->numero}}</strong></p>
+          <div class="haut_numero">
+            <p><strong class="numeroTel">{{$numero->numero}}</strong></p>
+            <a href="/" class="lien">Retour à l'accueil</a>
+          </div>
 
           <div class="bas_numero">
             <p class="type">{{$numero->type}}</p>
@@ -38,6 +41,10 @@
             <a href="#" class="lien signalCommentaire">Signaler ce commentaire</a>
         </div>
       @endforeach
+        <div class="commentaire">
+
+            <a href="ajoutNumero" class="lien signalCommentaire">Ajouter un commentaire</a>
+        </div>
 
     @else
       <div class="commentaire">
