@@ -38,7 +38,7 @@
             <p><strong class="pseudo">{{$commentaire->pseudoAuteur}}</strong> a écrit :</p>
             <p class="texteCommentaire">{{$commentaire->commentaire}}</p>
             <p class="date">Le {{$commentaire->date_commentaire}}</p>
-            <a href="#" class="lien signalCommentaire">Signaler ce commentaire</a>
+            <a href="#" class="lien signalCommentaire" data-id="{{$commentaire->id}}">Signaler ce commentaire</a>
         </div>
       @endforeach
         <div class="commentaire">
