@@ -34,7 +34,8 @@ header a:hover {
 	background-color: #C4C4C4;
 	border: none;
 	width: 130px;
-	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
 
 #headerDiv3 {

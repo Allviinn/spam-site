@@ -35,6 +35,10 @@
             <div class="row">
                 <h4 class="col-12 offset-sm-1 col-sm-10">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
 
+
+            
+
+
                 <a href="ajoutNumero" id="lienAjoutNumero" class="col-12 col-sm-6">
                     <article id="articleAjout">
                     
@@ -47,9 +51,10 @@
                 <a href="" id="lienRechercheNum" class="col-12 col-sm-6">
                     <article id="articleRecherche">
         
+
                         <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
                         <p>Vous souhaitez rechercher un numéro?</p>
-        
+
                     </article>
                 </a>
             </div>
@@ -59,7 +64,7 @@
 
             <label>Entrez le numéro : </label><input type="text" name="numeroRecherche">
             <input type="submit" name="submitRechercheNum" id="submitRechercheNum" value="Rechercher">
-            <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}"><br>
          </form>
 
         <script type="text/javascript" src="{{ URL::to('js/alvin.js') }}"></script>
