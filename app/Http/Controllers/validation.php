@@ -14,7 +14,7 @@ use App\spam_numeros;
 
 class validation extends Controller
 {
-    public function validation (message $request){
+    public function validation (Request $request){
     
   
         
@@ -73,6 +73,6 @@ class validation extends Controller
         
         }
 
- 
+       
     }
 }

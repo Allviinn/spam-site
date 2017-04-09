@@ -103,6 +103,11 @@ h4 {
   align-self: flex-end;
 }
 
+#form {
+  position: absolute;
+  visibility: hidden;
+}
+
 @media all and (max-width: 768px){
   section {
     margin: 0;

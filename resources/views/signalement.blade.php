@@ -11,40 +11,20 @@
 
 <p> Pour quelle raisons souhaitez-vous signaler ce commentaires </p>
 
- <form action="ciblesignalement.blade.php" methode="post">
+ <form action =''>
 
 
- <input type="radio" name="signaler" value="Contenu offansant">Contenu offansant<br>
- <input type="radio" name="signaler" value="Info fausse">info fausse<br>
- <input type="radio" name="signaler" value="Présence d'info privées">Présence d'info privées<br>
- <input type="radio" id="div1"  name="signaler" value="Autre raisons">Auteur raisons<br>
+ <input type="radio" name="signaler" class="signale" value="Contenu offansant">Contenu offansant<br>
+ <input type="radio" name="signaler" class="signale" value="Info fausse">info fausse<br>
+ <input type="radio" name="signaler" class="signale" value="Présence d'info privées">Présence d'info privées<br>
+ <input type="radio" id="div1"  name="signaler" class="signale" value="Autre raisons">Auteur raisons<br>
 <br><br>
 <textarea id="div2" style="display:none" type="text"  name="autre_raisons" placeholder="Autre raisons" row="38" cols="65"> </textarea>
 <br><br>
-<input type="submit" value="Signaler">
-
+<input type="submit" value="Signaler" id="signaler">
+<input type="hidden" name="_token" value="{{ csrf_token() }}">
 </form>
 
-<script type="text/javascript">
-
-$(document).ready(function(){
-	$("#div1").click(function(){
-		$("#div2").fadeIn(1000);
-	});
-	
-});
-
-
-</script>
-
-<?php
-
-
-		
-
-
-?>
-
-
+<script type="text/javascript" src="{{URL::to('js/ajaxSignalementForm.js')}}"></script>
 </body>
 </html>

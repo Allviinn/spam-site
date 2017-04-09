@@ -6,8 +6,12 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
   <link rel="stylesheet" href="{{URL::to('css/styleRecherche.css')}}">
+  <link rel="stylesheet" href="{{URL::to('css/formSignal.css')}}">
   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
   <title>Résultat de votre recherche</title>
 </head>
 <body>
@@ -38,7 +42,7 @@
             <p><strong class="pseudo">{{$commentaire->pseudoAuteur}}</strong> a écrit :</p>
             <p class="texteCommentaire">{{$commentaire->commentaire}}</p>
             <p class="date">Le {{$commentaire->date_commentaire}}</p>
-            <a href="#" class="lien signalCommentaire" data-id="{{$commentaire->id}}">Signaler ce commentaire</a>
+            <a href="" data-id="{{$commentaire->id}}" class="lien signalCommentaire">Signaler ce commentaire</a>
         </div>
       @endforeach
         <div class="commentaire">
@@ -54,6 +58,30 @@
     @endif
 
   </section>
+  
+         
+<div id="divFormSignal"> 
+
+              <h5> Pour quelle raisons souhaitez-vous signaler ce commentaires </h5>
+
+  <form id="formSignal" action="insertSignal" method="post">
+
+
+    <input type="radio" name="signaler" class="radioSignal" value="Contenu offansant">Contenu offansant<br>
+    <input type="radio" name="signaler" class="radioSignal" value="Info fausse">info fausse<br>
+    <input type="radio" name="signaler" class="radioSignal" value="Présence d'info privées">Présence d'info privées<br>
+    <input type="radio" name="signaler" class="radioSignal" value="Autre raisons">Autre raisons<br>
+<br><br>
+    <textarea type="text"  name="textAutreRaison" id="textAutreRaison" placeholder="Autre raisons"> </textarea>
+<br><br>
+    <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
+    <input type="hidden" name="idCom" value="" id="idCom"> 
+    <input type="submit" value="Signaler" id="signaler">
+</form>
+          
+</div>
+
+<script type="text/javascript" src="{{URL::to('js/ajaxSignalement.js')}}"></script>
 
 </body>
 </html>
