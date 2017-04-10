@@ -1,0 +1,122 @@
+header {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	background-color: #c6002b;
+	margin: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+header a {
+	display: block;
+	text-decoration: none;
+	text-align: right;
+	color: white;
+	font-weight: bold;
+}
+
+#headerDiv2 {
+	margin-top: 10px;
+	text-align: left;
+}
+
+header a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+#citation {
+	padding-top: 15px;
+	padding-bottom: 6px;
+	text-align: center;
+	color: white;
+	background-color: #343434;
+}
+
+#section1 {
+	background-image: url('/graphisme/graphismes/images/harcelement-telephonique-opacity.png');
+	background-repeat: no-repeat;
+	background-size: 150%;
+	background-position: center bottom 0%;
+}
+
+
+#aPropos {
+	position: relative;
+	z-index: 1;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#aPropos img {
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width: 300px;
+	text-align: center;
+}
+
+#logo {
+
+	text-align: center;
+}
+
+#aPropos p {
+	text-align: center;
+}
+
+
+
+@media screen and (min-width: 576px) { 			/* largeur mobile */
+
+  	#section1 {
+  		background-size: 100%;
+  	}
+
+}
+
+@media screen and (min-width: 768px) { 			/* largeur mobile */
+
+  	#aPropos img {
+  		width: 400px;
+  	}
+
+}
+
+@media screen and (min-width: 992px) { 			/* largeur mobile */
+
+  	#aPropos img {
+  		width: 430px;
+  	}
+
+  	#aPropos p {
+  		width: 450px;
+  		text-align: justify;
+  		margin-top: 30px;
+  	}
+
+  	#section1 {
+		background-size: 50%;
+		background-position: center bottom 0%;
+	}
+
+	#citation {
+		font-size: 24px;
+	}
+
+  	
+
+}
+
+@media screen and (min-width: 1200px) { 			/* largeur mobile */
+
+  	#section1 {
+		background-size: 30%;
+		background-position: center bottom 0%;
+	}
+
+	#aProposP p {
+		text-align: justify;
+		margin-left: 100px;
+	}
+
+}
