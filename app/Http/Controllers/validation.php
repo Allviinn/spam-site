@@ -9,6 +9,7 @@ use App\Http\Requests\message;
 use App\spam_auteurs;
 use App\spam_commentaires;
 use App\spam_numeros;
+use DB;
 
 
 
@@ -75,4 +76,22 @@ class validation extends Controller
 
        
     }
+    
+    public function getCommentaire(){
+        
+        $numero = new spam_numeros; 
+        $commentaires = new spam_commentaires; 
+        
+        $toutNumero = $numero::join("spam_commentaires","spam_numeros.id","=","spam_commentaires.id_spam_numeros")
+                    ->select('spam_commentaires.id as id','spam_numeros.numero',DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
+                    ->groupBy('spam_numeros.id')
+                    ->orderBy('count','DESC')
+                    ->limit(10)
+                        // ->toSql();
+                    ->get();
+   // dd($toutNumero);
+   return view ('welcome',array('numeros'=>$toutNumero));
+
+}    
+    
 }

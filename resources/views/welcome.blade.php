@@ -61,6 +61,15 @@
                <input type="submit" name="submitRechercheNum" id="submitRechercheNum" value="Rechercher">
             </form>
          </div>
+         
+        @foreach($numeros as $key => $numero)
+        
+        {{$numero->numero}}
+        {{$numero->count}}
+        
+        
+        @endforeach
+        
         <script type="text/javascript" src="{{ URL::to('js/alvin.js') }}"></script>
     </body>
 </html>

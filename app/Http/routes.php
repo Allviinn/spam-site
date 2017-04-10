@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/','validation@getCommentaire');
 
 Route::get('ajoutNumero', 'Controller@index');
 Route::post('traitement','validation@validation');

@@ -45,8 +45,8 @@
             
             
           
-          <input type="radio" name="type" value="Sms" class="message_pri"> Sms &nbsp;&nbsp;
-          <input type="radio" name="type" value="Appel" class="message_pri"> Appel<br>
+          <input type="radio" name="type" value="Sms" class="message_pri"> <span>Sms</span> &nbsp;&nbsp;
+            <input type="radio" name="type" value="Appel" class="message_pri"> <span>Appel</span><br>
           {!! $errors->first('type', '<small class="help-block">:message</small>') !!}<br>
             
            
