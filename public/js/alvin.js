@@ -25,12 +25,12 @@ $(document).ready(function() {
     		$('#retourUtil').text('Entrez un nombre');
     	}
 
-    	if(input.length < 5) {
+    	if(input.length <= 5) {
     		event.preventDefault();
     		$('#retourUtil').text('5 caractères minimum');
     	}
 
-    	if(input.length > 20) {
+    	if(input.length >= 20) {
     		event.preventDefault();
     		$('#retourUtil').text('20 caractères maximum');
     	}

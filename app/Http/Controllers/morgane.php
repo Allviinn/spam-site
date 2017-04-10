@@ -16,7 +16,7 @@ class morgane extends Controller
     $numero = new spam_numeros;
     $numRecherche = $request->input('numeroRecherche');
 
-    if(!empty($numRecherche) && is_numeric($numRecherche) &&  strlen($numRecherche) > 5 && strlen($numRecherche) < 20)
+    if(!empty($numRecherche) && is_numeric($numRecherche) &&  strlen($numRecherche) >= 5 && strlen($numRecherche) <= 20)
     {
       $numeros = $numero::select('*')
           ->where('numero', $numRecherche)
