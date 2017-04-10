@@ -47,7 +47,7 @@
       @endforeach
         <div class="commentaire">
 
-            <a href="ajoutNumero" class="lien signalCommentaire">Ajouter un commentaire</a>
+            <a href="ajoutNumero" class="lien ajoutCom">Ajouter un commentaire</a>
         </div>
 
     @else
@@ -58,9 +58,9 @@
     @endif
 
   </section>
-  
-         
-<div id="divFormSignal"> 
+
+
+<div id="divFormSignal">
 
               <h5> Pour quelle raisons souhaitez-vous signaler ce commentaires </h5>
 
@@ -75,10 +75,10 @@
     <textarea type="text"  name="textAutreRaison" id="textAutreRaison" placeholder="Autre raisons"> </textarea>
 <br><br>
     <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
-    <input type="hidden" name="idCom" value="" id="idCom"> 
+    <input type="hidden" name="idCom" value="" id="idCom">
     <input type="submit" value="Signaler" id="signaler">
 </form>
-          
+
 </div>
 
 <script type="text/javascript" src="{{URL::to('js/ajaxSignalement.js')}}"></script>
