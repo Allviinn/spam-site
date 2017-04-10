@@ -19,6 +19,12 @@ $(document).ready(function() {
 
     	var input = $('#numeroRecherche').val();
     	var longueur = input.length;
+
+			if($.isNumeric(input) == false) {
+    		event.preventDefault();
+    		$('#retourUtil').text('Entrez un nombre');
+    	}
+
     	if(input.length < 5) {
     		event.preventDefault();
     		$('#retourUtil').text('5 caractères minimum');
@@ -37,7 +43,7 @@ $(document).ready(function() {
     });
 
 	var largeur = $(window).width();
-	
+
 		if(largeur < 576) {
 			$('#sectionAccueil img').attr('src' , 'graphisme/graphismes/images/fond-accueil-mobile2.png');
 		} else {
@@ -47,7 +53,7 @@ $(document).ready(function() {
 	$(window).resize(function() {
 
 		var largeur = $(window).width();
-	
+
 		if(largeur < 576) {
 			$('#sectionAccueil img').attr('src' , 'graphisme/graphismes/images/fond-accueil-mobile2.png');
 		} else {
