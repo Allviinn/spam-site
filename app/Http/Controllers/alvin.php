@@ -16,6 +16,10 @@ class alvin extends Controller
 {
 
 	
+    public function index() {
+        return view('a_propos');
+    }
+
 
     public function passId( Request $request) {
 

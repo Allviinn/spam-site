@@ -24,4 +24,4 @@ Route::post('recherche', 'morgane@rechercheNumero');
 
 Route::post('insertSignal', 'alvin@passId');
 
-//Route::get('signaler', 'alvin@index');
+Route::get('a_propos', 'alvin@index');
