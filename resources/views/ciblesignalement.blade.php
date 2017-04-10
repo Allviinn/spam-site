@@ -1,4 +1,4 @@
- <?php 
+ <?php
 
  echo htmlspecialchars  ($_post['signaler']);
 
@@ -7,11 +7,11 @@
  {
 
  	if ($_post['signaler']['size']<= 1000 000)
- 	{	
+ 	{
 
  		$infosfichier = pathinfo($_files['signaler']['name']);
  		$extension_upload = $infosfichier['extension'];
- 		$extention_autorisees = array('text' );
+ 		$extention_autorisees = array('text');
  		if (in_array($extention_upload,$extention_autorisees))
 
  		{
