@@ -7,6 +7,10 @@ label{
         
 }
 
+body{
+    background-image: url(../graphisme/graphismes/images/fond-commentaire.jpg);
+}
+
 header {
 
     padding-top: 5px;
@@ -37,6 +41,7 @@ header a:hover {
     font-size: 45px;
     color:#5e000e;
     text-align: center;
+    margin-top: 60px;
    
 }
 
@@ -46,7 +51,6 @@ header a:hover {
     min-height: 40px;
     border:1px solid #3c3c3b;
     width: 300px;
-  
 }
 
 form{
@@ -55,6 +59,12 @@ form{
     margin-top: 30px;
     
 }
+
+small {
+    color: #c6002b;
+}
+
+
 .bouton{
     
 width: 150px;
@@ -63,7 +73,7 @@ border-radius: 20px;
 border:1px solid #5e000e;
 background-color: #5e000e;
 color: aliceblue;
-    
+cursor: pointer;
     
 }
 

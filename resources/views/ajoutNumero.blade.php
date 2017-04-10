@@ -33,37 +33,30 @@
         <div id="form">
         <form action="traitement" method="post">
            
-            <select name="genre" id="genre" >
-
-                 @foreach ($prefix as $code)
-                 <option value="{{$code->pays}}">+{{$code->code}}</option>
-                 @endforeach
-                 
-            </select>
-
-           <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : 0931235860"><br><br>
+  
+           <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : +33623586092"><br>
             {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
            
-            <input type="text" placeholder=" Votre pseudo" name="pseudo" id="pseudo"class="input" ><br><br>
+            <input type="text" placeholder=" Votre pseudo" name="pseudo" id="pseudo"class="input" ><br>
               {!! $errors->first('pseudo', '<small class="help-block">:message</small>') !!}<br>
             
-             <input type="text" placeholder=" Votre email (exemple@gmaol.com) " name="email" id="email"class="input" ><br><br>
+             <input type="text" placeholder=" Votre email (exemple@gmaol.com) " name="email" id="email"class="input" ><br>
               {!! $errors->first('email', '<small class="help-block">:message</small>') !!}<br>
             
             
           
           <input type="radio" name="type" value="Sms" class="message_pri"> Sms &nbsp;&nbsp;
-          <input type="radio" name="type" value="Appel" class="message_pri"> Appel<br><br>
+          <input type="radio" name="type" value="Appel" class="message_pri"> Appel<br>
           {!! $errors->first('type', '<small class="help-block">:message</small>') !!}<br>
             
            
-           <textarea cols="50" rows="6" name=" commentaire" id="commentaire" class="input" placeholder=" Votre commentaire" ></textarea><br><br>
-            {!! $errors->first('commentaire', '<small class="help-block">:message</small>') !!}<br>
+           <textarea cols="50" rows="6" name=" commentaire" id="commentaire" class="input" placeholder=" Votre commentaire" ></textarea><br>
+            {!! $errors->first('commentaire', '<small class="help-block">:message</small>') !!}<br><br>
             
            
           
 
-            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}"><br>
+            <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
             <input class ="bouton" type="submit" id="submit" value="Valider">
 
         </form>

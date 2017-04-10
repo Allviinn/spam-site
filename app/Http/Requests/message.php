@@ -25,11 +25,14 @@ class message extends Request
     {
         return [
             
-            'numero' => 'required|numeric|max:20|min:5',
+            'numero' =>array ('required',
+            'regex:/(00)[0-9]{5,20}$|\+[0-9]{5,20}$/'),
             'email' => 'required|email|max:255',
             'commentaire' => 'required|max:255',
             'type' => 'required',
             'pseudo' => 'required',
+            
+         
         ];
     }
     
@@ -39,9 +42,7 @@ class message extends Request
         return [
         
         'numero.required'=>"Ce champ est obligatoire",   
-        'numero.numeric'=>"Ce champ doit Être un numéro",   
-        'numero.max'=>"Maximum 20 caractères",  
-        'numero.min'=>"Minimum 5 caractères", 
+        'numero.regex'=>"Format de téléphone invalide",   
             
         'email.required'=>"Ce champ est obligatoire",  
         'email.email'=>"Email non valide",
