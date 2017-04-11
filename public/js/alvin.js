@@ -83,7 +83,9 @@ $(document).ready(function() {
                     for (var k = 0; k < data.auteursA.length ; k++) {
                     divCom.append('<p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-6 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class=" col-6 offset-md-2 col-md-4 offset-lg-3 col-lg-3">Signaler ce commentaire</a>');
                     divCom.animate({"min-height": "200px", "padding": "15px"});
-                    celuiLa.html('<a href="#" class="col-6 offset-md-1 col-md-5 hideComments">Cacher les commentaires</a><br>');
+                    celuiLa.removeClass("seeComents");
+                    celuiLa.addClass("hideComments");
+                 
 
                     
                     }
