@@ -69,7 +69,12 @@ $(document).ready(function() {
         e.preventDefault();
         var celuiLa = $(this);
         var numero = $(this).attr('data-numero');
-        var divCom = $(this).parent().siblings('div');
+        var a = $(this).siblings('a');
+        console.log(celuiLa);
+        //var divCom = $(this).parent().siblings('div');
+        var divCom = $(this).parent().parent().siblings('div');
+       
+  
 
          $.ajax({
                 type:'POST',
@@ -81,10 +86,12 @@ $(document).ready(function() {
                  success:function(data){
                     //console.log(data);
                     for (var k = 0; k < data.auteursA.length ; k++) {
-                    divCom.append('<p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-6 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class=" col-6 offset-md-2 col-md-4 offset-lg-3 col-lg-3">Signaler ce commentaire</a>');
+                    divCom.append('<p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-8 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class=" col-4 offset-md-1 col-md-3 offset-lg-3 col-lg-3">Signaler ce commentaire</a>');
                     divCom.animate({"min-height": "200px", "padding": "15px"});
-                    celuiLa.removeClass("seeComents");
-                    celuiLa.addClass("hideComments");
+                    a.css('visibility','visible');
+                    celuiLa.css('visibility','hidden');
+                
+              
                  
 
                     
@@ -92,23 +99,28 @@ $(document).ready(function() {
                 }
             });
 
-                    
+ 
+                
  
 
     });
 
-$('.hideComments').on('click', function(event) {
+   $('.hideComments').on('click', function(event) {
+        
+        var celuiLa = $(this);
+        var a = $(this).siblings('a');
+        var divCom= $(this).parent().parent().siblings('div');
 
                         event.preventDefault();
+                        celuiLa.css('visibility','hidden');
+                        a.css('visibility','visible');
+                       
 
-                        var celuiLaA = $(this);
-                        var divComA = $(this).parent().siblings('div');
-
-                        divComA.animate({"min-height": "50px", "height" :"0px", "padding": "0px"});
-                        divComA.css('overflow', 'hidden');
-                        celuiLaA.html('<a href="#" class="col-6 offset-md-1 col-md-5 seeComents">Afficher les commentaires</a><br>');
+                        divCom.animate({"min-height": "0px", "padding": "0px"});
+                        divCom.empty();
+                         
+                        
     });  
-
 
 
 

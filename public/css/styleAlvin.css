@@ -165,9 +165,9 @@ header a:hover {
 
 .commentairesAccueil {
 	background-color: white;
-	overflow: hidden;
+/*	overflow: hidden;*/
 	box-shadow: 0px 0px 2px black;
-	height: 0px;
+/*	height: 0px;*/
 	transition: height 1s;
 }
 

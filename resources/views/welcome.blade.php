@@ -87,7 +87,8 @@
                 </div>
     
                 <div class="row">
-                    <a class="col-6 offset-md-1 col-md-5 seeComents" href="" data-numero="{{ $numero->numero }}">Voir les commentaires</a>
+                    <a class="col-12 offset-md-1 col-md-11 seeComents" style="visibility:visible"href="" data-numero="{{ $numero->numero }}">Voir les commentaires</a>
+                    <a class="col-12 offset-md-1 col-md-11 hideComments" href=""  style="visibility:hidden" >Cacher les commentaires</a>
                     
                 
                 </div>
