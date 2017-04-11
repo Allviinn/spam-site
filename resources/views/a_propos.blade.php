@@ -5,6 +5,7 @@
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('css/a_propos.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 </head>
@@ -53,15 +54,11 @@
 
         		<p>Le spam vocal est une technique frauduleuse qui consiste à appeler un numéro de téléphone en ne laissant 
         		sonner qu'une seule fois. Le destinataire, n'ayant pas eu le temps de décrocher, essaie alors de rappeler le 
-        		numéro du "correspondant" qui s'est affiché… et tombe sur un numéro surtaxé.La technique existe depuis plusieurs
+        		numéro du "correspondant" qui s'est affiché… et tombe sur un numéro surtaxé. <br><br>La technique existe depuis plusieurs
         		années mais les escrocs utilisent de nouvelles ruses pour vous inciter à rappeler les numéros surtaxés.
-				Pour ne pas susciter la méfiance de leurs victimes, les escrocs passent désormais leurs appels depuis des numéros 
-				en 01, 02, 04 etc... plutôt que des 0 899. En confiance, vous rappelez et tombez sur un opérateur qui vous annonce 
-				que vous avez gagné un bon d'achat ou un cadeau. Pour pouvoir toucher votre lot, vous devez appeler un prétendu 
-				service clients (dont le numéro en 0 899 est lui surtaxé). L'objectif des escrocs est simple ; vous faire 
-				passer un maximum de temps au téléphone, pour gagner un maximum d’argent à chaque appel. 
-				C'est pour cela qu'ils ont remplacé les ordinateurs, qui passaient des milliers de coups de fil chaque jour, 
-				par des humains.</p>
+                L'objectif des escrocs est simple ; vous faire passer un maximum de temps au téléphone, pour gagner un 
+                maximum d’argent à chaque appel. C'est pour cela qu'ils ont remplacé les ordinateurs, qui passaient des 
+                milliers de coups de fil chaque jour, par des humains.</p>
 
         	</article>
 
