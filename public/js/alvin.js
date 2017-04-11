@@ -81,7 +81,7 @@ $(document).ready(function() {
                     console.log(data);
                     for (var k = 0; k < data.auteursA.length ; k++) {
                         $('.commentairesAccueil').append('<div class="row"><p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +' </p><a href="#" class="offset-7 col-5 offset-md-8 col-md-4 offset-lg-9 col-lg-3">Signaler ce commentaire</a></div>');
-                    $('.commentairesAccueil').animate({"height": "400px", "padding": "15px"});
+                    $('.commentairesAccueil').animate({"height": "400px", "padding": "15px"},5);
                     }
                 }
             });
