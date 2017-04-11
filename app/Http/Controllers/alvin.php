@@ -33,13 +33,16 @@ class alvin extends Controller
             $numerosA = $spam_numerosA::select('*')->where('numero', $numeroAccueil)->first();
             $idNumeroA = $numerosA->id;
             
-            $commentairesA = $spam_commentairesA::select('*')->where('id_spam_numeros', '=', $idNumeroA)->get();
-            //$idAuteur = $commentaires->id_spam_auteurs;
-            var_dump($commentairesA);
-            //$auteurs = $spam_auteurs::select('*')->where('id', $idAuteur)->get();
+            $auteurA = $spam_auteursA::
+            join('spam_commentaires','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
+            ->select('*')
+            ->where('spam_commentaires.id_spam_numeros',$idNumeroA)
+            ->get();
 
-            //return response()->json(array('auteursA' => $auteurs, 'commentairesA' => $commentaires, 'numerosA' => $numerosA));
-            //var_dump($numeros);
+       
+
+            return response()->json(array('auteursA' => $auteurA));
+            
         }
 
         

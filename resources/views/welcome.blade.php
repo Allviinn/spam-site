@@ -92,21 +92,7 @@
             </div>
             </article>
             <div class="commentairesAccueil">
-                <div class="row">
-                    <p class="col-12 pseudoCommentaires">Pseudo 1 :</p><br>
-
-                    <p class="col-12 descCommentaires">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis tortor quis neque semper, 
-                        in egestas libero facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in commodo 
-                        dolor, cursus hendrerit dui. Aenean commodo nunc sit amet diam malesuada tincidunt. Proin ornare nisi 
-                        quis tortor mattis iaculis.
-                    </p>
-
-                    <a href="#" class="offset-7 col-5 offset-md-8 col-md-4 offset-lg-9 col-lg-3">Signaler ce commentaire</a>
-
                 
-
-                    </div>
             </div>
         @endforeach
 
