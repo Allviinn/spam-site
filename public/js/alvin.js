@@ -67,8 +67,9 @@ $(document).ready(function() {
     $('.seeComents').on('click', function(e) {
 
         e.preventDefault();
-
+        var celuiLa = $(this);
         var numero = $(this).attr('data-numero');
+        var divCom = $(this).parent().siblings('div');
 
          $.ajax({
                 type:'POST',
@@ -78,16 +79,35 @@ $(document).ready(function() {
                     "numero": numero
                     },
                  success:function(data){
-                    console.log(data);
+                    //console.log(data);
                     for (var k = 0; k < data.auteursA.length ; k++) {
-                        $('.commentairesAccueil').append('<div class="row"><p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +' </p><a href="#" class="offset-7 col-5 offset-md-8 col-md-4 offset-lg-9 col-lg-3">Signaler ce commentaire</a></div>');
-                    $('.commentairesAccueil').animate({"height": "400px", "padding": "15px"},5);
+                    divCom.append('<p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-6 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class=" col-6 offset-md-2 col-md-4 offset-lg-3 col-lg-3">Signaler ce commentaire</a>');
+                    divCom.animate({"min-height": "200px", "padding": "15px"});
+                    celuiLa.html('<a href="#" class="col-6 offset-md-1 col-md-5 hideComments">Cacher les commentaires</a><br>');
+
+                    
                     }
                 }
             });
+
+                    
  
 
     });
+
+$('.hideComments').on('click', function(event) {
+
+                        event.preventDefault();
+
+                        var celuiLaA = $(this);
+                        var divComA = $(this).parent().siblings('div');
+
+                        divComA.animate({"min-height": "50px", "height" :"0px", "padding": "0px"});
+                        divComA.css('overflow', 'hidden');
+                        celuiLaA.html('<a href="#" class="col-6 offset-md-1 col-md-5 seeComents">Afficher les commentaires</a><br>');
+    });  
+
+
 
 
 });

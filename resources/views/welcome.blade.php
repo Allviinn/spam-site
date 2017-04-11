@@ -78,22 +78,24 @@
             </header> 
 
         @foreach($numeros as $key => $numero)
+        <div class="parentCommentaire">
             <article class="articlesNumeros">
-            <div class="row">
-            <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros">{{$numero->numero}}</span></p>
-
-            <p class="offset-3 col-3 offset-md-3 col-md-3 unNumero"><span class="spanNumeros">{{$numero->count}} </span>rapports<p>
-            </div>
-
-            <div class="row">
-            <a class="col-6 offset-md-1 col-md-5 seeComents" href="" data-numero="{{ $numero->numero }}">Voir les commentaires</a>
-
-            
-            </div>
+                <div class="row">
+                    <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros">{{$numero->numero}}</span></p>
+    
+                    <p class="offset-3 col-3 offset-md-3 col-md-3 unNumero"><span class="spanNumeros">{{$numero->count}} </span>rapports<p>
+                </div>
+    
+                <div class="row">
+                    <a class="col-6 offset-md-1 col-md-5 seeComents" href="" data-numero="{{ $numero->numero }}">Voir les commentaires</a>
+                    
+                
+                </div>
             </article>
             <div class="commentairesAccueil">
                 
             </div>
+        </div>
         @endforeach
 
         </section>
