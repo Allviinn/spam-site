@@ -76,28 +76,27 @@ $(document).ready(function() {
        
   
 
-         $.ajax({
-                type:'POST',
-                 url:'numAccueil',
-                 data: {
-                    "_token": $('#token1').attr('value'),//ajax, envoi de donnée de la recherche par ville
-                    "numero": numero
-                    },
-                 success:function(data){
-                    //console.log(data);
-                    for (var k = 0; k < data.auteursA.length ; k++) {
-                    divCom.append('<p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-8 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class=" col-4 offset-md-1 col-md-3 offset-lg-3 col-lg-3">Signaler ce commentaire</a>');
-                    divCom.animate({"min-height": "200px", "padding": "15px"});
-                    a.css('visibility','visible');
-                    celuiLa.css('visibility','hidden');
+        $.ajax({
+               type:'POST',
+                url:'numAccueil',
+                data: {
+                   "_token": $('#token1').attr('value'),//ajax, envoi de donnée de la recherche par ville
+                   "numero": numero
+                   },
+                success:function(data){
+                   //console.log(data);
+                   for (var k = 0; k < data.auteursA.length ; k++) {
+                   divCom.append('<div style="border-bottom: 1px solid grey; padding: 10px;"><p class="col-12 pseudoCommentaires">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3">Signaler ce commentaire</a></div>');
+                   divCom.animate({"min-height": "200px", "padding": "15px", "padding-bottom" :"0px"});
+                   a.css('display','block');
+                   celuiLa.css('display','none');
+               
+             
                 
-              
-                 
-
-                    
-                    }
-                }
-            });
+                   
+                   }
+               }
+           });
 
  
                 
@@ -112,8 +111,8 @@ $(document).ready(function() {
         var divCom= $(this).parent().parent().siblings('div');
 
                         event.preventDefault();
-                        celuiLa.css('visibility','hidden');
-                        a.css('visibility','visible');
+                        celuiLa.css('display','none');
+                        a.css('display','block');
                        
 
                         divCom.animate({"min-height": "0px", "padding": "0px"});

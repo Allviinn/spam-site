@@ -169,12 +169,13 @@ header a:hover {
 	box-shadow: 0px 0px 2px black;
 /*	height: 0px;*/
 	transition: height 1s;
+	border-bottom: 1px solid grey;
 }
 
 .pseudoCommentaires {
-	border-top: 1px solid grey;
-	padding-top: 5px;
+	margin-top: 10px;
 }
+
 
 
 
