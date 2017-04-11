@@ -61,7 +61,31 @@ $(document).ready(function() {
 		}
 
 
-	})
+	});
+
+
+    $('.seeComents').on('click', function(e) {
+
+        e.preventDefault();
+
+        var numero = $(this).attr('data-numero');
+
+         $.ajax({
+                type:'POST',
+                 url:'numAccueil',
+                 data: {
+                    "_token": $('#token1').attr('value'),//ajax, envoi de donnée de la recherche par ville
+                    "numero": numero
+                    },
+                 success:function(data){
+                    console.log(data);
+
+                    //$('.commentairesAccueil').animate({"height": "200px", "padding": "15px"});
+                }
+            });
+ 
+
+    });
 
 
 });

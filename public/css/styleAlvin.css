@@ -138,6 +138,39 @@ header a:hover {
 	cursor: pointer;
 }
 
+#headerNumeros {
+	color: white;
+	background-color: #343434;
+	padding: 20px;
+}
+
+#sectionNumeros {
+	background-color: #E6E6E6;
+	
+}
+
+.articlesNumeros {
+	background-color: white;
+	margin-top: 20px;
+	padding: 10px;
+	box-shadow: 0px 0px 2px black;
+	width: 100%;
+}
+
+.spanNumeros {
+	font-size: 25px;
+	color: #c6002b;
+	font-weight: bold;
+}
+
+.commentairesAccueil {
+	background-color: white;
+	overflow: hidden;
+	box-shadow: 0px 0px 2px black;
+	height: 0px;
+	transition: height 1s;
+}
+
 @media screen and (min-width: 576px) { 			/* largeur mobile */
 
   	#formRechercheNum {
@@ -158,6 +191,8 @@ header a:hover {
   		width: 40%;
   		left: 30%;
   	}
+
+  	
 
 }
 

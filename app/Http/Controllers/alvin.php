@@ -20,6 +20,32 @@ class alvin extends Controller
         return view('a_propos');
     }
 
+    public function numAccueil(Request $request) {
+        
+        if($request->ajax()) {
+            $numeroAccueil = $_POST['numero'];
+        
+            //echo $numeroAccueil;
+            $spam_auteursA = new spam_auteurs;   
+            $spam_commentairesA = new spam_commentaires;
+            $spam_numerosA = new spam_numeros;
+
+            $numerosA = $spam_numerosA::select('*')->where('numero', $numeroAccueil)->first();
+            $idNumeroA = $numerosA->id;
+            
+            $commentairesA = $spam_commentairesA::select('*')->where('id_spam_numeros', '=', $idNumeroA)->get();
+            //$idAuteur = $commentaires->id_spam_auteurs;
+            var_dump($commentairesA);
+            //$auteurs = $spam_auteurs::select('*')->where('id', $idAuteur)->get();
+
+            //return response()->json(array('auteursA' => $auteurs, 'commentairesA' => $commentaires, 'numerosA' => $numerosA));
+            //var_dump($numeros);
+        }
+
+        
+
+    }
+
 
     public function passId( Request $request) {
 

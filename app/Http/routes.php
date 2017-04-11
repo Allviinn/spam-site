@@ -13,6 +13,8 @@
 
 Route::get('/','validation@getCommentaire');
 
+Route::post('numAccueil', 'alvin@numAccueil');
+
 Route::get('ajoutNumero', 'Controller@index');
 Route::post('traitement','validation@validation');
 

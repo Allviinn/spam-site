@@ -29,9 +29,9 @@
         
         	<article id="aPropos">
         	<div class="row">
-        		<div id="logo" class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-1 col-lg-5"><img src="graphisme/graphismes/images/logo-rouge.png"></div>
+        		<div id="logo" class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-0 col-lg-5"><img src="graphisme/graphismes/images/logo-rouge.png"></div>
 
-        		<div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-0 col-lg-5" id="aProposP"><p>Spaminator s’adresse aux personnes régulièrement importunées par des appels téléphoniques ou SMS appelés SPAMS, 
+        		<div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-2 col-lg-5" id="aProposP"><p>Spaminator s’adresse aux personnes régulièrement importunées par des appels téléphoniques ou SMS appelés SPAMS, 
         		et souhaitant les signaler à d’autres utilisateurs. Le site vous permet de rechercher rapidement un numéro de 
         		téléphone afin d’obtenir des informations ou d’ajouter votre commentaire. Vous avez également la possibilité 
         		d’ajouter un numéro afin de compléter la liste actuelle et d’indiquer à d’autres consommateurs les appels ou 
@@ -47,7 +47,7 @@
         <section id="section2" class="container-fluid">
         <div class="row">
 
-        	<article id="section2Article1">
+        	<article id="section2Article1" class="col-12 col-lg-7">
         	
         		<h4>Qu’est-ce-qu’un SPAM ?</h4>
 
@@ -67,7 +67,7 @@
 
 
 
-        	<article id="section2Article2">
+        	<article id="section2Article2" class="col-12 col-lg-5">
 
         		<h4>Exemples de SPAMS :</h4>
 
@@ -86,6 +86,19 @@
 
         </div>
         </section>
+
+        <footer>
+
+            <p>Si vous êtes régulièrement importuné par des numéros indésirables, vous pouvez vous inscrire sur la liste d'opposition 
+            au démarchage téléphonique BLOCTEL : <br><br><span style="font-size: 20px;">https://inscription.bloctel.fr/</span><br><br>
+            Que faire si j'ai rappelé un numéro surtaxé ?<br><br>
+            Si vous avez été victime de cette escroquerie, contacter le numéro Info escroquerie :<br><br> 
+            <span style="font-size: 20px;">0 805 805 817</span><br><br>
+
+            <small>Source : http://www.police-nationale.interieur.gouv.fr</small></p>
+
+
+        </footer>
 
 
 

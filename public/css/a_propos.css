@@ -64,7 +64,26 @@ header a:hover {
 	text-align: center;
 }
 
+#section2Article1 {
+	background-color: #5e000e;
+	color: white;
+	padding: 15px;
+	text-align: center;
+}
 
+#section2Article2 {
+	background-color: #343434;
+	color: white;
+	padding: 15px;
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+	color: white;
+	padding: 20px;
+	background-color: #c6002b;
+}
 
 @media screen and (min-width: 576px) { 			/* largeur mobile */
 
@@ -89,7 +108,6 @@ header a:hover {
   	}
 
   	#aPropos p {
-  		width: 450px;
   		text-align: justify;
   		margin-top: 30px;
   	}
@@ -102,6 +120,15 @@ header a:hover {
 	#citation {
 		font-size: 24px;
 	}
+
+	#section2Article1 {
+		text-align: justify;
+	}
+
+	#section2Article2 {
+		text-align: justify;
+	}
+
 
   	
 
@@ -116,7 +143,6 @@ header a:hover {
 
 	#aProposP p {
 		text-align: justify;
-		margin-left: 100px;
 	}
 
 }

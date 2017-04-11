@@ -62,14 +62,58 @@
             </form>
          </div>
          
+
+        <section id="sectionNumeros" class="container-fluid">
+        
+            <header id="headerNumeros" class="row">
+                <h5 class="col-12 offset-sm-1 col-sm-5">Numéros critiques</h5>
+
+                <form class="col-12 col-sm-6 offset-md-2 col-md-4 offset-lg-3 col-lg-3">
+                    Filtrer par : 
+                    <input type="radio" name="filtreType" class="filtreType">: Appel
+                    <input type="radio" name="filtreType" class="filtreType">: SMS
+                </form>
+
+
+            </header> 
+
         @foreach($numeros as $key => $numero)
-        
-        {{$numero->numero}}
-        {{$numero->count}}
-        
-        
+            <article class="articlesNumeros">
+            <div class="row">
+            <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros">{{$numero->numero}}</span></p>
+
+            <p class="offset-3 col-3 offset-md-3 col-md-3 unNumero"><span class="spanNumeros">{{$numero->count}} </span>rapports<p>
+            </div>
+
+            <div class="row">
+            <a class="col-6 offset-md-1 col-md-5 seeComents" href="" data-numero="{{ $numero->numero }}">Voir les commentaires</a>
+
+            
+            </div>
+            </article>
+            <div class="commentairesAccueil">
+                <div class="row">
+                    <p class="col-12 pseudoCommentaires">Pseudo 1 :</p><br>
+
+                    <p class="col-12 descCommentaires">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi iaculis tortor quis neque semper, 
+                        in egestas libero facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in commodo 
+                        dolor, cursus hendrerit dui. Aenean commodo nunc sit amet diam malesuada tincidunt. Proin ornare nisi 
+                        quis tortor mattis iaculis.
+                    </p>
+
+                    <a href="#" class="offset-7 col-5 offset-md-8 col-md-4 offset-lg-9 col-lg-3">Signaler ce commentaire</a>
+
+                
+
+                    </div>
+            </div>
         @endforeach
-        
+
+        </section>
+        <form>
+    <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
+</form>
         <script type="text/javascript" src="{{ URL::to('js/alvin.js') }}"></script>
     </body>
 </html>
