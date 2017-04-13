@@ -1,26 +1,29 @@
-$('.ok').on('change', function(e) {
+
+$('#email').on('change', function(e) {
     
-
-    var clicked =$(this);
-    var val =clicked.val();
-
-
-    if(val =="pasInscrit"){
+    var val =$('#email').val();
+    //console.log(val);
         
-    $('#pseudo').css('visibility','visible'); 
+    $.ajax({
+        method: "POST",
+        url: 'pseudoExiste',
+        data: {
 
-    }else{
-    $('#pseudo').css('visibility','hidden');    
-    }
+            "_token": $('#token').attr('value'),
+            'valeurChamps': val
         
+        }, 
+        success: function(msg) {
+                        //console.log(msg.pseudoExiste.pseudo);
+            if(msg.pseudoExiste !== null){
     
-});
+               
+                $('#pseudo').attr('value',msg.pseudoExiste.pseudo);
+                $('#pseudo').attr('readonly','readonly');
+            }
 
-$('#email').on('click', function(e) {
-    
-    
-    
-    
+        }
+    });
     
     
 });
