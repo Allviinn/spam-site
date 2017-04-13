@@ -206,14 +206,13 @@ header a:hover {
 }
 
 #divFormSignal {
-	position: fixed;
+	position: absolute;
 	width: 50%;
 	left: 25%;
 	height: 60%;
 	top: 20%;
 	background-color: red;
 	padding: 30px;
-	display: none;
 }
 
 #divFormSignal h5 {
@@ -247,6 +246,30 @@ header a:hover {
 	border-radius: 5px;
 }
 
+#modalForm {
+	position: fixed;
+	background-color: grey;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	background: rgba(169, 169, 169, 0.7);
+	transition: opacity 0.5s;
+	opacity: 0;
+	display: none;
+}
+
+#croixSignal {
+	text-decoration: none;
+	position: absolute;
+	top: 3%;
+	right: 3%;
+	color: white;
+}
+
+#croixSignal:hover {
+	text-decoration: none;
+}
+
 
 @media screen and (max-width: 576px) { 			/* largeur mobile */
 
@@ -267,6 +290,11 @@ header a:hover {
 
   		margin-top: 15px;
 
+  	}
+
+  	#formRechercheNum input {
+  		margin: 0px;
+  		width: 100%;
   	}
 
 }

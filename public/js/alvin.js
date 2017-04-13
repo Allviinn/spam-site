@@ -6,10 +6,11 @@ $(document).ready(function() {
 		e.preventDefault();
 
 			$("#modal").show().animate({opacity:1}, 50);
+      $('#modal').css('z-index', '5')
     });
 
-    $('#croix').on('click', function() {
-
+    $('#croix').on('click', function(e) {
+      e.preventDefault();
     	$("#modal").hide('slow').animate({opacity:0});
     });
 
@@ -112,8 +113,8 @@ $(document).ready(function() {
         var idCommentaire = $(this).attr('data-id');
         $('#idCom').attr('value', idCommentaire);
 
-        $("#divFormSignal").fadeIn(1000);
-
+        $("#modalForm").show().animate({opacity:1}, 50);
+        $("#divFormSignal").css('z-index', '6');
             $('.radioSignal').change(function() {
     
                 var radio = $('.radioSignal:checked').val();
@@ -128,6 +129,11 @@ $(document).ready(function() {
 
 
 
+    });
+
+    $('#croixSignal').on('click', function(e) {
+      e.preventDefault();
+        $("#modalForm").hide('slow').animate({opacity:0});
     });
 
 

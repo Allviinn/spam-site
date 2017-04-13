@@ -108,10 +108,12 @@
     <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
 </form>
 
+
+<div id="modalForm">
 <div id="divFormSignal">
 
               <h5> Pour quelle raisons souhaitez-vous signaler ce commentaires </h5>
-
+    <a href="" id="croixSignal">X</a>
   <form id="formSignal" action="insertSignal" method="post">
 
 
@@ -128,7 +130,7 @@
 </form>
 
 </div>
-
+</div>
         <script type="text/javascript" src="{{ URL::to('js/alvin.js') }}"></script>
     </body>
 </html>
