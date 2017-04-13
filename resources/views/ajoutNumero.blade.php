@@ -41,14 +41,9 @@
             
             <input type="text" placeholder=" Votre email (exemple@gmail.com) " name="email" id="email"class="input" ><br>
               {!! $errors->first('email', '<small class="help-block">:message</small>') !!}<br>
-              
-              
-            <input type="radio" name="inscrit" value="inscrit" class="ok"> Déjà inscrit? &nbsp;&nbsp;
-            <input type="radio" name="inscrit" value="pasInscrit" class="ok"> Première visite?<br>
-          {!! $errors->first('inscrit', '<small class="help-block">:message</small>') !!}<br>
-              
-            <input type="text" placeholder=" Votre pseudo" name="pseudo"  id="pseudo"class="input" style="visibility:hidden;" ><br>
-              {!! $errors->first('pseudo', '<small class="help-block"  >:message</small>') !!}<br> 
+                            
+            <input type="text" placeholder=" Votre pseudo" name="pseudo" value=""  id="pseudo"class="input"  ><br>
+              {!! $errors->first('pseudo', '<small class="help-block" id="erreurPseudo"    >:message</small>') !!}<br> 
            
           
           <input type="radio" name="type" value="Sms" class="message_pri"> <span>Sms</span> &nbsp;&nbsp;

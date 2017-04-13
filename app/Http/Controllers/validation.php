@@ -33,51 +33,58 @@ class validation extends Controller
         $auteurs = new spam_auteurs;   
         $commentaires = new spam_commentaires; 
         
-        $pseudoExiste = $auteurs::select('id')
-            ->where('email', '=', $request->input('email'))
+         
+        $idAuteur = $auteurs::select('id')
+            ->where('email', '=', $email)
             ->first();
-        dd($pseudoExiste);
         
-//        $insertionAuteur =  $auteurs::insertGetId(
-//                ['pseudo' => $pseudo,'email' => $email]
-//            );     
-//        
-//        $idnum = $numeros::select('id')
-//            ->where('numero', '=', $numero)
-//            ->first();
-//    
-//        if(!isset($idnum->id)){
-//        
-//            $insertionNmero =  $numeros::insertGetId(
-//                ['numero' => $numero,
-//                 'type' =>$type,
-//                 'date_ajout' =>$date,
-//                 'id_spam_auteurs' =>$insertionAuteur
-//                
-//                ]
-//            ); 
-//        
-//            $insertioncommentaire = $commentaires::insert(
-//                ['commentaire' => $commentaire,
-//                 'date_commentaire' =>$date,
-//                 'id_spam_auteurs' =>$insertionAuteur,
-//                 'id_spam_numeros' =>$insertionNmero
-//                
-//                ]
-//            );         
-//     
-//        } else {
-//        
-//            $insertioncommentaire = $commentaires::insert(
-//                ['commentaire' => $commentaire,
-//                 'date_commentaire' =>$date,
-//                 'id_spam_auteurs' =>$insertionAuteur,
-//                 'id_spam_numeros' =>$idnum->id
-//                
-//                ]
-//            );             
-//        
-//        }
+        if(!isset($idAuteur->id)){
+            
+        $insertionAuteur =  $auteurs::insertGetId(
+                ['pseudo' => $pseudo,'email' => $email]
+         );    
+        }else {
+            $insertionAuteur = $idAuteur->id;
+        }   
+        
+        $idnum = $numeros::select('id')
+            ->where('numero', '=', $numero)
+            ->first();
+      
+        
+            
+        if(!isset($idnum->id)){
+        
+            $insertionNmero =  $numeros::insertGetId(
+                ['numero' => $numero,
+                 'type' =>$type,
+                 'date_ajout' =>$date,
+                 'id_spam_auteurs' =>$insertionAuteur
+                
+                ]
+            ); 
+        
+            $insertioncommentaire = $commentaires::insert(
+                ['commentaire' => $commentaire,
+                 'date_commentaire' =>$date,
+                 'id_spam_auteurs' =>$insertionAuteur,
+                 'id_spam_numeros' =>$insertionNmero
+                
+                ]
+            );         
+     
+        } else {
+        
+            $insertioncommentaire = $commentaires::insert(
+                ['commentaire' => $commentaire,
+                 'date_commentaire' =>$date,
+                 'id_spam_auteurs' =>$insertionAuteur,
+                 'id_spam_numeros' =>$idnum->id
+                
+                ]
+            );             
+        
+        }
 
        
     }
@@ -97,6 +104,23 @@ class validation extends Controller
    // dd($toutNumero);
    return view ('welcome',array('numeros'=>$toutNumero));
 
-}    
+} 
+    
+    public function pseudo (request $request){
+    
+        if($request->ajax()){
+            
+        $email = $request->input('valeurChamps');
+        $auteurs = new spam_auteurs; 
+            
+        $pseudoExiste = $auteurs::select('*')
+            ->where('email', '=', $email)
+            ->first();    
+        
+    return response()->json(array('pseudoExiste' => $pseudoExiste));    
+    }    
+        
+        
+    }
     
 }

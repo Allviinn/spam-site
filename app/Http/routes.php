@@ -19,6 +19,7 @@ Route::get('ajoutNumero', 'Controller@index');
 Route::post('traitement','validation@validation');
 
 Route::post('recherche', 'morgane@rechercheNumero');
+Route::post('pseudoExiste', 'validation@pseudo');
 
 
 
