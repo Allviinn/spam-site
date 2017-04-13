@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{{ URL::to('css/styleAlvin.css') }}">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
     
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
@@ -30,13 +32,13 @@
 
         <section id="sectionAjout" class="container-fluid">
             <div class="row">
-                <h4 class="col-12 offset-sm-1 col-sm-10">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
+                <h4 class="col-12 offset-sm-1 col-sm-10" id="titreAccueil" style="font-family: 'Oswald', sans-serif;">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
                 
                 <a href="ajoutNumero" id="lienAjoutNumero" class="col-12 col-sm-6 offset-md-1 col-md-5 offset-lg-2 col-lg-4">
                     <article id="articleAjout">
                     
                     <img src="graphisme/graphismes/images/icone-ajout.png" width="70">
-                    <p>Vous souhaitez signaler un SMS ou un appel?</p>
+                    <p>Vous souhaitez signaler un numéro?</p>
                     
                     </article>
                 </a>
@@ -46,7 +48,7 @@
         
 
                         <img src="graphisme/graphismes/images/icone-loupe.png" width="70">
-                        <p>Vous souhaitez rechercher un numéro?</p>
+                        <p>Vous souhaitez rapporter un numéro?</p>
 
                     </article>
                 </a>
@@ -83,9 +85,9 @@
         <div class="parentCommentaire">
             <article class="articlesNumeros">
                 <div class="row">
-                    <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros">{{$numero->numero}}</span></p>
+                    <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros">{{$numero->numero}}</span><br>({{ $numero->type }})</p>
     
-                    <p class="offset-3 col-3 offset-md-3 col-md-3 unNumero"><span class="spanNumeros">{{$numero->count}} </span>rapports<p>
+                    <p class="offset-2 col-3 offset-md-3 col-md-3 unNumero"><span class="spanNumeros">{{$numero->count}} </span>rapports<p>
                 </div>
     
                 <div class="row">
