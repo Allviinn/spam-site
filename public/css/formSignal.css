@@ -1,17 +1,27 @@
-#divFormSignal {
+#divopacity {
 	position: absolute;
 	width: 50%;
 	left: 25%;
 	height: 60%;
 	top: 20%;
-	background-color: red;
+	background-color: white;
 	padding: 30px;
+	border-radius: 5px;
+	color: #5e000e;
 	display: none;
 }
 
+
+
 #divFormSignal h5 {
 
-	text-align: center;
+	color: #5e000e;
+	font-size: 20px;
+}
+
+#signaler {
+
+	color:white;
 
 }
 
@@ -36,6 +46,19 @@
 	padding-top: 10px;
 	padding-bottom: 10px;
 	border: 1px solid #c6002b;
-	background-color: white;
+	background-color: #c6002b;
 	border-radius: 5px;
 }
+
+#divFormSignal {
+
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0%;
+	background: rgba(169, 169, 169, 0.7);
+	transition: opacity 0.5s;
+	display: none;
+
+}
+

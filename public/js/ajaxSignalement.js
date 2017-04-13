@@ -4,7 +4,8 @@ $(document).ready(function() {
         event.preventDefault();
         var idCommentaire = $(this).attr('data-id');
     
-            $("#divFormSignal").fadeIn(1000);
+            $("#divopacity").fadeIn(500);
+            $("#divFormSignal").fadeIn(500);
             $('#idCom').attr('value', idCommentaire);
     
             $('.radioSignal').change(function() {
