@@ -31,48 +31,53 @@ class validation extends Controller
         
         $numeros = new spam_numeros;   
         $auteurs = new spam_auteurs;   
-        $commentaires = new spam_commentaires;   
+        $commentaires = new spam_commentaires; 
         
-        $insertionAuteur =  $auteurs::insertGetId(
-                ['pseudo' => $pseudo,'email' => $email]
-            );     
-        
-        $idnum = $numeros::select('id')
-            ->where('numero', '=', $numero)
+        $pseudoExiste = $auteurs::select('id')
+            ->where('email', '=', $request->input('email'))
             ->first();
-    
-        if(!isset($idnum->id)){
+        dd($pseudoExiste);
         
-            $insertionNmero =  $numeros::insertGetId(
-                ['numero' => $numero,
-                 'type' =>$type,
-                 'date_ajout' =>$date,
-                 'id_spam_auteurs' =>$insertionAuteur
-                
-                ]
-            ); 
-        
-            $insertioncommentaire = $commentaires::insert(
-                ['commentaire' => $commentaire,
-                 'date_commentaire' =>$date,
-                 'id_spam_auteurs' =>$insertionAuteur,
-                 'id_spam_numeros' =>$insertionNmero
-                
-                ]
-            );         
-     
-        } else {
-        
-            $insertioncommentaire = $commentaires::insert(
-                ['commentaire' => $commentaire,
-                 'date_commentaire' =>$date,
-                 'id_spam_auteurs' =>$insertionAuteur,
-                 'id_spam_numeros' =>$idnum->id
-                
-                ]
-            );             
-        
-        }
+//        $insertionAuteur =  $auteurs::insertGetId(
+//                ['pseudo' => $pseudo,'email' => $email]
+//            );     
+//        
+//        $idnum = $numeros::select('id')
+//            ->where('numero', '=', $numero)
+//            ->first();
+//    
+//        if(!isset($idnum->id)){
+//        
+//            $insertionNmero =  $numeros::insertGetId(
+//                ['numero' => $numero,
+//                 'type' =>$type,
+//                 'date_ajout' =>$date,
+//                 'id_spam_auteurs' =>$insertionAuteur
+//                
+//                ]
+//            ); 
+//        
+//            $insertioncommentaire = $commentaires::insert(
+//                ['commentaire' => $commentaire,
+//                 'date_commentaire' =>$date,
+//                 'id_spam_auteurs' =>$insertionAuteur,
+//                 'id_spam_numeros' =>$insertionNmero
+//                
+//                ]
+//            );         
+//     
+//        } else {
+//        
+//            $insertioncommentaire = $commentaires::insert(
+//                ['commentaire' => $commentaire,
+//                 'date_commentaire' =>$date,
+//                 'id_spam_auteurs' =>$insertionAuteur,
+//                 'id_spam_numeros' =>$idnum->id
+//                
+//                ]
+//            );             
+//        
+//        }
 
        
     }
@@ -83,7 +88,7 @@ class validation extends Controller
         $commentaires = new spam_commentaires; 
         
         $toutNumero = $numero::join("spam_commentaires","spam_numeros.id","=","spam_commentaires.id_spam_numeros")
-                    ->select('spam_commentaires.id as id','spam_numeros.numero',DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
+                    ->select('spam_commentaires.id as id','spam_numeros.numero','spam_numeros.type' ,DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
                     ->groupBy('spam_numeros.id')
                     ->orderBy('count','DESC')
                     ->limit(10)

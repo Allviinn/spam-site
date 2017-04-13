@@ -24,13 +24,27 @@
       <article class="numero">
         @foreach($numeros as $key => $numero)
           <div class="haut_numero">
-            <p><strong class="numeroTel">{{$numero->numero}}</strong></p>
+            <p>
+              <strong class="numeroTel">
+                {{$numero->numero}}
+              </strong>
+            </p>
             <a href="/" class="lien">Retour à l'accueil</a>
           </div>
 
           <div class="bas_numero">
-            <p class="type">{{$numero->type}}</p>
-            <p><em class="nbreCommentaires">0</em> commentaires</p>
+            <p class="type">
+              {{$numero->type}}
+            </p>
+
+            <p>
+              <em class="nbreCommentaires">{{$count}}</em>
+              @if (count($commentaires) > 1)
+              commentaires
+              @else
+              commentaire
+              @endif
+            </p>
           </div>
 
         @endforeach
@@ -39,28 +53,45 @@
       @foreach($commentaires as $key => $commentaire)
         <div class="commentaire">
 
-            <p><strong class="pseudo">{{$commentaire->pseudoAuteur}}</strong> a écrit :</p>
-            <p class="texteCommentaire">{{$commentaire->commentaire}}</p>
-            <p class="date">Le {{$commentaire->date_commentaire}}</p>
-            <a href="" data-id="{{$commentaire->id}}" class="lien signalCommentaire">Signaler ce commentaire</a>
+            <p>
+              <strong class="pseudo">
+                {{$commentaire->pseudoAuteur}}
+              </strong>
+            a écrit :</p>
+
+            <p class="texteCommentaire">
+              {{$commentaire->commentaire}}
+            </p>
+
+            <p class="date">
+              Le {{$commentaire->date_commentaire}}
+            </p>
+
+            <a href="" data-id="{{$commentaire->id}}" class="lien signalCommentaire">
+              Signaler ce commentaire
+            </a>
         </div>
       @endforeach
-        <div class="commentaire">
 
-            <a href="ajoutNumero" class="lien ajoutCom">Ajouter un commentaire</a>
+        <div class="commentaire">
+            <a href="ajoutNumero" class="lien ajoutCom">
+              Ajouter un commentaire
+            </a>
         </div>
 
     @else
       <div class="commentaire">
-        <p class="aucunCommentaire">Aucun numéro ne correspond à votre recherche. Pour insérer ce numéro, <a href="ajoutNumero" class="lien">cliquez ici</a></p>
+        <p class="aucunCommentaire">
+          Aucun numéro ne correspond à votre recherche. Pour insérer ce numéro, <a href="ajoutNumero" class="lien">cliquez ici</a>
+        </p>
       </div>
 
     @endif
 
   </section>
 
-
 <div id="divFormSignal">
+
   <div id="divopacity">
   
                 <h5 id="h4raph"> Pour quelle raisons souhaitez-vous signaler ce commentaires </h5>
@@ -81,6 +112,8 @@
   </form>
   
   </div>
+
+
 </div>
 
 <script type="text/javascript" src="{{URL::to('js/ajaxSignalement.js')}}"></script>
