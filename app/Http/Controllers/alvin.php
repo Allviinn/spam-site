@@ -35,7 +35,7 @@ class alvin extends Controller
             
             $auteurA = $spam_auteursA::
             join('spam_commentaires','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
-            ->select('*')
+            ->select('*', 'spam_commentaires.id AS id')
             ->where('spam_commentaires.id_spam_numeros',$idNumeroA)
             ->get();
 

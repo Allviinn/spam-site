@@ -71,7 +71,7 @@
         		<h5>SMS</h5>
 
         		<p>“Coin-RELAIS. Bonjour, Votre colis ref:48FQ07 est a votre disposition depuis le 05-01-17. 
-        		Pour confirmer votre adresse, composez le 0899XXXXXX (134e +0.3”</p>
+        		Pour confirmer votre adresse, composez le 0899XXXXXX (134e +0.3)”</p>
 
         		<h5>APPEL</h5>
         	

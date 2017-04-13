@@ -87,7 +87,7 @@ $(document).ready(function() {
                    //console.log(data);
                    for (var k = 0; k < data.auteursA.length ; k++) {
                        
-                   divCom.append('<div style="border-bottom: 1px solid grey; padding: 10px;"><p class="col-12 pseudoCommentaires" style="font-weight: bold">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3" style="color: #c6002b;">Commentaire abusif?</a></div>');
+                   divCom.append('<div style="border-bottom: 1px solid grey; padding: 10px;"><p class="col-12 pseudoCommentaires" style="font-weight: bold">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3 signalCom" data-id="' + data.auteursA[k].id + '" style="color: #c6002b;">Commentaire abusif?</a></div>');
                    divCom.animate({"min-height": "200px", "padding": "15px", "padding-bottom" :"0px"});
                    a.css('display','block');
                    celuiLa.css('display','none');
@@ -104,6 +104,33 @@ $(document).ready(function() {
  
 
     });
+
+    $('.commentairesAccueil').on('click', '.signalCom', function(e) {
+
+
+        e.preventDefault(e);
+        var idCommentaire = $(this).attr('data-id');
+        $('#idCom').attr('value', idCommentaire);
+
+        $("#divFormSignal").fadeIn(1000);
+
+            $('.radioSignal').change(function() {
+    
+                var radio = $('.radioSignal:checked').val();
+        
+                if(radio == 'Autre raisons') {
+                    $('#textAutreRaison').css('opacity', '1');
+                } else if (radio !== 'Autre raisons') {
+                    $('#textAutreRaison').css('opacity', '0');
+                }
+    
+            });
+
+
+
+    });
+
+
 
    $('.hideComments').on('click', function(event) {
         
