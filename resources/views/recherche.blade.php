@@ -30,7 +30,13 @@
 
           <div class="bas_numero">
             <p class="type">{{$numero->type}}</p>
-            <p><em class="nbreCommentaires">0</em> commentaires</p>
+            <p>
+              <em class="nbreCommentaires">{{$count}}</em>
+            @if (count($commentaires) > 1)
+            commentaires</p>
+            @else
+            commentaire</p>
+            @endif
           </div>
 
         @endforeach
