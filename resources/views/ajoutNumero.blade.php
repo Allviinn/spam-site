@@ -37,17 +37,25 @@
            <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : +33623586092"><br>
             {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
            
-            <input type="text" placeholder=" Votre pseudo" name="pseudo" id="pseudo"class="input" ><br>
-              {!! $errors->first('pseudo', '<small class="help-block">:message</small>') !!}<br>
+           
             
-             <input type="text" placeholder=" Votre email (exemple@gmaol.com) " name="email" id="email"class="input" ><br>
+            <input type="text" placeholder=" Votre email (exemple@gmail.com) " name="email" id="email"class="input" ><br>
               {!! $errors->first('email', '<small class="help-block">:message</small>') !!}<br>
-            
-            
+              
+              
+            <input type="radio" name="inscrit" value="inscrit" class="ok"> Déjà inscrit? &nbsp;&nbsp;
+            <input type="radio" name="inscrit" value="pasInscrit" class="ok"> Première visite?<br>
+          {!! $errors->first('inscrit', '<small class="help-block">:message</small>') !!}<br>
+              
+            <input type="text" placeholder=" Votre pseudo" name="pseudo"  id="pseudo"class="input" style="visibility:hidden;" ><br>
+              {!! $errors->first('pseudo', '<small class="help-block"  >:message</small>') !!}<br> 
+           
           
           <input type="radio" name="type" value="Sms" class="message_pri"> <span>Sms</span> &nbsp;&nbsp;
             <input type="radio" name="type" value="Appel" class="message_pri"> <span>Appel</span><br>
-          {!! $errors->first('type', '<small class="help-block">:message</small>') !!}<br>
+          {!! $errors->first('type', '<small class="help-block ">:message</small>') !!}<br> 
+           
+         
             
            
            <textarea cols="50" rows="6" name=" commentaire" id="commentaire" class="input" placeholder=" Votre commentaire" ></textarea><br>
@@ -65,9 +73,7 @@
         
         </div>
 
-<!--
-        <a href="test">Lien de test vers une autre page</a>
-        <script type="text/javascript" src="{{ URL::to('js/welcome.js') }}"></script>
--->
+
+        <script type="text/javascript" src="{{ URL::to('js/ibtissem.js') }}"></script>
     </body>
 </html>
