@@ -37,8 +37,9 @@ class morgane extends Controller
         ->where('spam_commentaires.id_spam_numeros',$idNumero)
         ->get();
 
-        // dd($commentaires);
-        return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires));
+        $count = count($commentaires);
+
+        return view('recherche', array("numeros"=>$numeros, "commentaires"=>$commentaires, "count"=>$count));
       }
       else
       {
