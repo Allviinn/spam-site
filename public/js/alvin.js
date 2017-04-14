@@ -121,11 +121,14 @@ $(document).ready(function() {
         
                 if(radio == 'Autre raisons') {
                     $('#textAutreRaison').css('opacity', '1');
+                     $("#textAutreRaison").prop('disabled', false);
                 } else if (radio !== 'Autre raisons') {
-                    $('#textAutreRaison').css('opacity', '0');
+                    $('#textAutreRaison').css('opacity', '5');
+                    $("#textAutreRaison").prop('disabled', true);
                 }
     
             });
+
 
 
 

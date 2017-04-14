@@ -207,36 +207,42 @@ header a:hover {
 
 #divFormSignal {
 	position: absolute;
-	width: 50%;
-	left: 25%;
-	height: 60%;
+	width: 80%;
+	left: 10%;
 	top: 20%;
 	background-color: red;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	padding: 30px;
 }
 
 #divFormSignal h5 {
-
+	margin-bottom: 20px;
 	text-align: center;
 
 }
 
-.radioSignal {
-	margin-left: 50px;
-	margin-top: 10px;
+#css {
+	padding: 0px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 15px;
 }
 
 #textAutreRaison {
 	width: 80%;
 	margin-left: 10%;
 	height: 100px;
-	opacity: 0;
+	opacity: 0.3;
 	transition: opacity 0.5s;
 }
 
 #signaler {
 	width: 40%;
-	margin-left: 30%;
 	padding: left: 20px;
 	padding-right: 20px;
 	padding-top: 10px;
@@ -262,7 +268,7 @@ header a:hover {
 	text-decoration: none;
 	position: absolute;
 	top: 3%;
-	right: 3%;
+	right: 5%;
 	color: white;
 }
 
