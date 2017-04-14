@@ -71,9 +71,9 @@ $(document).ready(function() {
         var celuiLa = $(this);
         var numero = $(this).attr('data-numero');
         var a = $(this).siblings('a');
-        console.log(celuiLa);
         //var divCom = $(this).parent().siblings('div');
         var divCom = $(this).parent().parent().siblings('div');
+        
        
   
 
@@ -86,19 +86,41 @@ $(document).ready(function() {
                    },
                 success:function(data){
                    //console.log(data);
-                    var h = (data.auteursA.length)*170;
+                    var h = (data.auteursA.length);
+                     var hauteur = h*201;
                    for (var k = 0; k < data.auteursA.length ; k++) {
                        
-                    divCom.animate({"height": h+"px", "padding": "15px", "padding-bottom" :"0px"},5);
-                       
-                   divCom.append('<div style="border-bottom: 1px solid grey; padding: 10px;"><p class="col-12 pseudoCommentaires" style="font-weight: bold">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3 signalCom" data-id="' + data.auteursA[k].id + '" style="color: #c6002b;">Commentaire abusif?</a></div>');
+                   
+                   divCom.append('<div style="border-bottom: 1px solid grey;" class="divComentaire"><p class="col-12 pseudoCommentaires" style="font-weight: bold">'+ data.auteursA[k].pseudo +' :</p><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3 signalCom" data-id="' + data.auteursA[k].id + '" style="color: #c6002b;">Commentaire abusif ?</a></div>');
                     a.css('display','block');
+
+
+                           //$('.divComentaire').each(function() {
+
+                           //  hauteur += $(this).height();
+                           //  
+
+                           //});
+                           
+                              //var haut = $('.divComentaire').css('height');
+                              //var hauteur = parseInt(haut, 10);
+                              //height += hauteur;
+                       
+                           //console.log(hauteur);
+                       
+
+                      
+
+
+
                     celuiLa.css('display','none');
-                  
-             
+                    divCom.css({'max-height': hauteur, 'height':'auto'});
+                    $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box'});
                 
                    
                    }
+
+
                }
            });
 
@@ -152,9 +174,8 @@ $(document).ready(function() {
                         event.preventDefault();
                         celuiLa.css('display','none');
                         a.css('display','block');
-                       
-                        divCom.animate({"height": "0px", "padding": "0px"});
                         divCom.empty();
+                        divCom.css({"max-height": "0px"});
                       
     });  
 
