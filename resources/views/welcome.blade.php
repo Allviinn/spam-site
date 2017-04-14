@@ -32,7 +32,7 @@
 
         <section id="sectionAjout" class="container-fluid">
             <div class="row">
-                <h4 class="col-12 offset-sm-1 col-sm-10" id="titreAccueil" style="font-family: 'Oswald', sans-serif;">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h4>
+                <h1 class="col-12 offset-sm-1 col-sm-10" id="titreAccueil" style="font-family: 'Oswald', sans-serif;">Ajoutez un nouveau numéro ou recherchez un numéro dans notre liste</h1>
                 
                 <a href="ajoutNumero" id="lienAjoutNumero" class="col-12 col-sm-6 offset-md-1 col-md-5 offset-lg-2 col-lg-4">
                     <article id="articleAjout">
@@ -70,13 +70,9 @@
         <section id="sectionNumeros" class="container-fluid">
         
             <header id="headerNumeros" class="row">
-                <h5 class="col-12 offset-sm-1 col-sm-5">Numéros critiques</h5>
+                <h4 class="col-12 offset-sm-1 col-sm-5">Numéros critiques</h4>
 
-                <form class="col-12 col-sm-6 offset-md-2 col-md-4 offset-lg-3 col-lg-3">
-                    Filtrer par : 
-                    <input type="radio" name="filtreType" class="filtreType">: Appel
-                    <input type="radio" name="filtreType" class="filtreType">: SMS
-                </form>
+                
 
 
             </header> 
@@ -93,7 +89,7 @@
                 <div class="row">
                     <a class="col-12 offset-md-1 col-md-3 offset-lg-1 col-lg-3 seeComents" style="display:block"href="" data-numero="{{ $numero->numero }}">Voir les commentaires</a><br>
                     <a class="col-12 offset-md-1 col-md-3 offset-lg-1 col-lg-3 hideComments" href=""  style="display:none" >Cacher les commentaires</a>
-                    
+                    <a href="ajoutNumero" style="color: #c6002b" class="col-12 offset-md-5 col-md-3 offset-lg-5 col-lg-3">Ajouter un commentaire</a>
                 
                 </div>
             </article>
