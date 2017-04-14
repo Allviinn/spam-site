@@ -86,13 +86,15 @@ $(document).ready(function() {
                    },
                 success:function(data){
                    //console.log(data);
+                    var h = (data.auteursA.length)*170;
                    for (var k = 0; k < data.auteursA.length ; k++) {
                        
+                    divCom.animate({"height": h+"px", "padding": "15px", "padding-bottom" :"0px"},5);
+                       
                    divCom.append('<div style="border-bottom: 1px solid grey; padding: 10px;"><p class="col-12 pseudoCommentaires" style="font-weight: bold">'+ data.auteursA[k].pseudo +' :</p><br><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3 signalCom" data-id="' + data.auteursA[k].id + '" style="color: #c6002b;">Commentaire abusif?</a></div>');
-                   divCom.animate({"min-height": "200px", "padding": "15px", "padding-bottom" :"0px"});
-                   a.css('display','block');
-                   celuiLa.css('display','none');
-               
+                    a.css('display','block');
+                    celuiLa.css('display','none');
+                  
              
                 
                    
@@ -151,7 +153,7 @@ $(document).ready(function() {
                         celuiLa.css('display','none');
                         a.css('display','block');
                        
-                        divCom.animate({"min-height": "0px", "padding": "0px"});
+                        divCom.animate({"height": "0px", "padding": "0px"});
                         divCom.empty();
                       
     });  
