@@ -16,16 +16,18 @@ class alvin extends Controller
 {
 
 	
-    public function index() {
-        return view('a_propos');
+
+    public function index() { //redirection vers la page "à propos"
+        return view('a_propos'); 
     }
 
+
     public function numAccueil(Request $request) {
-        
+        //au clique sur "voir les commentaires" d'un numéro critique sur la page d'accueil, une requête ajax récupere les commentaires associés
         if($request->ajax()) {
             $numeroAccueil = $_POST['numero'];
         
-            //echo $numeroAccueil;
+            
             $spam_auteursA = new spam_auteurs;   
             $spam_commentairesA = new spam_commentaires;
             $spam_numerosA = new spam_numeros;
@@ -52,6 +54,8 @@ class alvin extends Controller
 
     public function passId( Request $request) {
 
+        //insertion dans la BDD d'un signalement d'un commentaire abusif
+        
     	    $raisonRadio = $request->input('signaler');
             $autreRaison = $request->input('textAutreRaison');
             $idSignal = $request->input('idCom');

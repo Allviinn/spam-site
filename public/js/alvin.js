@@ -81,13 +81,14 @@ $(document).ready(function() {
                type:'POST',
                 url:'numAccueil',
                 data: {
-                   "_token": $('#token1').attr('value'),//ajax, envoi de donnée de la recherche par ville
+                   "_token": $('#token1').attr('value'),
                    "numero": numero
                    },
                 success:function(data){
                    //console.log(data);
-                    var h = (data.auteursA.length);
-                     var hauteur = h*201;
+                      //var h = (data.auteursA.length);
+                      //var hauteur = h*201;
+                      var hauteur = 0;
                    for (var k = 0; k < data.auteursA.length ; k++) {
                        
                    
@@ -95,26 +96,14 @@ $(document).ready(function() {
                     a.css('display','block');
 
 
-                           //$('.divComentaire').each(function() {
+                    $('.divComentaire').each(function() {
 
-                           //  hauteur += $(this).height();
-                           //  
+                      hauteur += $(this).height();
 
-                           //});
-                           
-                              //var haut = $('.divComentaire').css('height');
-                              //var hauteur = parseInt(haut, 10);
-                              //height += hauteur;
-                       
-                           //console.log(hauteur);
-                       
-
-                      
-
-
+                    });
 
                     celuiLa.css('display','none');
-                    divCom.css({'max-height': hauteur, 'height':'auto'});
+                    divCom.css( 'height', hauteur);
                     $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box'});
                 
                    
