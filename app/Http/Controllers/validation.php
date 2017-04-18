@@ -99,7 +99,7 @@ class validation extends Controller
         $commentaires = new spam_commentaires; 
         
         $toutNumero = $numero::join("spam_commentaires","spam_numeros.id","=","spam_commentaires.id_spam_numeros")
-                    ->select('spam_commentaires.id as id','spam_numeros.numero','spam_numeros.type' ,DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
+                    ->select('spam_commentaires.id as id','spam_numeros.numero','spam_numeros.type','spam_numeros.prefix' ,DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
                     ->groupBy('spam_numeros.id')
                     ->orderBy('count','DESC')
                     ->limit(10)

@@ -83,7 +83,7 @@
             <div class="parentCommentaire">
                 <article class="articlesNumeros">
                     <div class="row">
-                        <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros">{{$numero->prefix}} {{$numero->numero}}</span><br> ({{ $numero->type }})</p>
+                        <p class="col-6 offset-md-1 col-md-5 unNumero"><span class="spanNumeros"> +{{$numero->prefix}} {{$numero->numero}}</span><br> ({{ $numero->type }})</p>
 
                         <p class="offset-2 col-3 offset-md-3 col-md-3 unNumero"><span class="spanNumeros">{{$numero->count}} </span>rapports<p>
                     </div>
