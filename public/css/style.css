@@ -106,9 +106,16 @@ span {
     cursor: pointer;
 }
 
-@media screen and (min-width: 992px) {
+@media all and (min-width: 992px) {
     /* largeur mobile */
     #headerDiv2 {
         font-size: 20px;
+    }
+}
+
+@media all and (max-width: 992px) {
+    /* largeur mobile */
+    .box-pays {
+        width: 90%;
     }
 }
