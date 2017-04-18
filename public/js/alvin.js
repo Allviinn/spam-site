@@ -86,9 +86,8 @@ $(document).ready(function() {
                    },
                 success:function(data){
                    //console.log(data);
-                      //var h = (data.auteursA.length);
-                      //var hauteur = h*201;
-                      var hauteur = 0;
+                      var h = (data.auteursA.length);
+                      var hauteur = h*201;
                    for (var k = 0; k < data.auteursA.length ; k++) {
                        
                    
@@ -96,14 +95,8 @@ $(document).ready(function() {
                     a.css('display','block');
 
 
-                    $('.divComentaire').each(function() {
-
-                      hauteur += $(this).height();
-
-                    });
-
                     celuiLa.css('display','none');
-                    divCom.css( 'height', hauteur);
+                    divCom.css({ 'max-height': hauteur, 'height' :'auto'});
                     $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box'});
                 
                    

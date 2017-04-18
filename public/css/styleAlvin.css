@@ -178,16 +178,16 @@ header a:hover {
 	box-shadow: 0px 0px 2px black;
 	height: 0px;
 	
-	/*max-height: 0px;*/
+	max-height: 0px;
 	-webkit-transition: height 0.75s;
 	-moz-transition: height 0.75s;
 	-o-transition: height 0.75s;
 	transition: height 0.75s;
 
-	/*-webkit-transition: max-height 0.75s;
+	-webkit-transition: max-height 0.75s;
 	-moz-transition: max-height 0.75s;
 	-o-transition: max-height 0.75s;
-	transition: max-height 0.75s;*/
+	transition: max-height 0.75s;
 	border-bottom: 1px solid grey;
 }
 
