@@ -78,7 +78,16 @@
 
         </form>
         
-    
+        <div class="box-pays">
+            <h5>Les pays supportés</h5>
+            <p class= "pays">
+            @foreach($prefix as $key => $pre)
+
+             {{$pre->pays}}, 
+
+             @endforeach
+            </p>
+        </div>
         
         </div>
 

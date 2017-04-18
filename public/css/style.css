@@ -1,24 +1,22 @@
-label{
-/*        background-color: red;*/
-        width: 150px;
-        display: block;
-        float: left;
-        
-        
+label {
+    /*        background-color: red;*/
+    width: 150px;
+    display: block;
+    float: left;
 }
 
-body{
+body {
     background-image: url(../graphisme/graphismes/images/fond-commentaire.jpg);
 }
-.prefix{
+
+.prefix {
     width: 80px;
     border-radius: 10px;
-    border:1px solid #3c3c3b;
-   
+    border: 1px solid #3c3c3b;
     min-height: 40px;
 }
-header {
 
+header {
     padding-top: 5px;
     padding-bottom: 5px;
     background-color: #c6002b;
@@ -42,33 +40,51 @@ header a:hover {
     text-decoration: none;
 }
 
-#numero{
-width: 215px;    
-    
+#numero {
+    width: 215px;
 }
-#h1{
-    
+
+.box-pays {
+    width: 50%;
+    margin: auto;
+    background-color: white;
+    padding: 0 15px 0 15px;
+/*
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+*/
+}
+
+.pays {
+    color:#3c3c3b;
+    text-align: justify;
+    font-size: 15px;  
+}
+
+.box-pays h5{
+    font-size: 25px;   
+}
+
+#h1 {
     font-size: 45px;
-    color:#5e000e;
+    color: #5e000e;
     text-align: center;
     margin-top: 60px;
     font-family: 'Oswald', sans-serif;
 }
 
-
-.input{
+.input {
     border-radius: 10px;
     min-height: 40px;
-    border:1px solid #3c3c3b;
+    border: 1px solid #3c3c3b;
     width: 300px;
 }
 
-form{
-   
+form {
     text-align: center;
     margin-top: 30px;
-  
-    
+    margin-bottom: 50px;
 }
 
 small {
@@ -80,23 +96,19 @@ span {
     font-weight: bold;
 }
 
-
-.bouton{
-    
-width: 150px;
-height: 50px;
-border-radius: 20px;
-border:1px solid #5e000e;
-background-color: #5e000e;
-color: aliceblue;
-cursor: pointer;
-    
+.bouton {
+    width: 150px;
+    height: 50px;
+    border-radius: 20px;
+    border: 1px solid #5e000e;
+    background-color: #5e000e;
+    color: aliceblue;
+    cursor: pointer;
 }
 
-@media screen and (min-width: 992px) {          /* largeur mobile */
-    
+@media screen and (min-width: 992px) {
+    /* largeur mobile */
     #headerDiv2 {
         font-size: 20px;
     }
-
 }

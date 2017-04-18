@@ -15,10 +15,19 @@ class Controller extends BaseController
 
     public function index() {
         
+        $tab =array();
+        
         $prefix = new spam_prefixs; 
         $codePays = $prefix::all();
-//        dd ($codePays);    
-    	return view('ajoutNumero',array("prefix"=>$codePays));
+        
+        foreach ($codePays as $pays){
+        if (strlen($pays->code)==2){
+        array_push($tab, $pays);    
+        }
+        }
+        
+//      dd ($tab);    
+    	return view('ajoutNumero',array("prefix"=>$tab));
     }
    
 }
