@@ -20,11 +20,14 @@ class validation extends Controller
   
         
         $numero = $request->input('numero');
+        $numeroSansZero = substr($numero,1,20);
 		$type = $request->input('type');
 		$qualite = $request->input('qualite');
 		$commentaire = $request->input('commentaire');
 		$email = $request->input('email');
 		$pseudo = $request->input('pseudo');
+		$prefix = $request->input('prefix');
+		$prefixSansPlus = substr($prefix,1,2);
 		$today = getdate();
 		$date = date("d/m/Y");   
         
@@ -54,9 +57,10 @@ class validation extends Controller
         
             
         if(!isset($idnum->id)){
-        
+            
             $insertionNmero =  $numeros::insertGetId(
-                ['numero' => $numero,
+                ['numero' => $numeroSansZero,
+                 'prefix' =>$prefixSansPlus,
                  'type' =>$type,
                  'date_ajout' =>$date,
                  'id_spam_auteurs' =>$insertionAuteur
