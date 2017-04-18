@@ -2,7 +2,6 @@
 	position: absolute;
 	width: 50%;
 	left: 25%;
-	height: 60%;
 	top: 20%;
 	background-color: white;
 	padding: 30px;
@@ -19,11 +18,6 @@
 	font-size: 20px;
 }
 
-#signaler {
-
-	color:white;
-
-}
 
 .radioSignal {
 	margin-left: 50px;
@@ -40,7 +34,8 @@
 
 #signaler {
 	width: 40%;
-	margin-left: 30%;
+	margin: auto;
+	display: block;
 	padding: left: 20px;
 	padding-right: 20px;
 	padding-top: 10px;
@@ -48,6 +43,7 @@
 	border: 1px solid #c6002b;
 	background-color: #c6002b;
 	border-radius: 5px;
+	color:white;
 }
 
 #divFormSignal {
@@ -61,4 +57,65 @@
 	display: none;
 
 }
+
+@media screen and (max-width:768px) {
+
+	#divopacity {
+
+		font-size: 10px;
+		height: auto;
+		width: 80%;
+		left: 10%;
+
+	}
+
+
+}
+
+
+@media screen and (max-width:390px) {
+
+	#divopacity {
+
+		font-size: 10px;
+		height: auto;
+		width: 90%;
+		left: 5%;
+		padding: 10px;
+
+	}
+
+	#divFormSignal {
+
+		padding-left: 10px;
+
+	}
+
+	#divFormSignal h5 {
+
+		font-size: 12px;
+		text-align: center;
+		
+	}
+
+	#signaler {
+
+		width: 60px;
+
+	}
+
+	.radioSignal {
+
+	margin-left: 5px;
+	margin-top: 1px;
+	
+	}
+
+	
+}
+
+
+
+
+
 
