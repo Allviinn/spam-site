@@ -158,12 +158,19 @@ $(document).ready(function() {
 
 //--------------------------------------------------------------------------------
 
-//page d'accueil : au clique sur 'ajouter un commentaire', une requête ajax envoi le numero et son prefix a la page d'ajout
-//de numero ou de commentaire et prérempli le numero et son prefix.
+//page d'accueil : au clique sur 'ajouter un commentaire', jquery assigne le numéro(et son préfix) 
+// au inputs d'un formulaire caché. Envoi du formulaire
 
     $('.addComment').on('click', function(e) {
         e.preventDefault();
-        
+
+        var prefix = $(this).attr('data-prefixA');
+        var num = $(this).attr('data-numeroA'); 
+
+       
+      $('.prefixA').val(prefix);
+      $('.numeroA').val(num);
+
         $('.formAddComment').submit();
 
 
