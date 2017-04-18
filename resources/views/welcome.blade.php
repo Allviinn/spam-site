@@ -91,8 +91,12 @@
                     <div class="row">
                         <a class="col-12 offset-md-1 col-md-3 offset-lg-1 col-lg-3 seeComents" style="display:block"href=""     data-numero="{{ $numero->numero }}">Voir les commentaires</a><br>
                         <a class="col-12 offset-md-1 col-md-3 offset-lg-1 col-lg-3 hideComments" href=""  style="display:none" >    Cacher les commentaires</a>
-                        <a href="ajoutNumero" style="color: #c6002b" class="col-12 offset-md-5 col-md-3 offset-lg-5 col-lg-3">  Ajouter un commentaire</a>
-
+                        <a href="" style="color: #c6002b" class="col-12 offset-md-5 col-md-3 offset-lg-5 col-lg-3 addComment">  Ajouter un commentaire</a>
+                        <form style="display: none;" action="addComment" method="post" class="formAddComment">
+                            <input type="hidden" name="prefixA" value="{{ $numero->prefix }}">
+                            <input type="hidden" name="numeroA" value="{{ $numero->numero }}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        </form>
                     </div>
                 </article>
                 <div class="commentairesAccueil">

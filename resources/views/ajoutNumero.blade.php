@@ -33,13 +33,19 @@
         <div id="form">
         <form action="traitement" method="post">
            
-  
-            <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" > 
-           
+            @if(isset($prefixA))
+                
+                  <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" value="{{ $prefixA }}"> 
+               
+           @endif
             
-            <input class="input" type="text" name="numero" id="numero" placeholder=" Ex : 0623586092"><br>
-            {!! $errors->first('prefix', '<small class="help-block">:message</small>') !!} {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
-           
+
+            @if(isset($numerosA))
+                
+                <input class="input" type="text" name="numero" id="numero" placeholder=" Ex : 0623586092" value="{{ $numerosA }}"><br>
+                {!! $errors->first('prefix', '<small class="help-block">:message</small>') !!} {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
+                
+           @endif
            
             
             <input type="text" placeholder=" Votre email (exemple@gmail.com) " name="email" id="email"class="input" ><br>

@@ -158,7 +158,17 @@ $(document).ready(function() {
 
 //--------------------------------------------------------------------------------
 
-    
+//page d'accueil : au clique sur 'ajouter un commentaire', une requête ajax envoi le numero et son prefix a la page d'ajout
+//de numero ou de commentaire et prérempli le numero et son prefix.
+
+    $('.addComment').on('click', function(e) {
+        e.preventDefault();
+        
+        $('.formAddComment').submit();
+
+
+
+    });
 
 
 
