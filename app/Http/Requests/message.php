@@ -45,8 +45,8 @@ class message extends Request
     {
         return [
         
-        'numero.required'=>"Entrez un numéro de téléphone",   
-        'prefix.required'=>"Entrez un préfixe",   
+        'numero.required'=>"Entrez un numéro de téléphone.",   
+        'prefix.required'=>"Entrez un préfixe.",   
         'numero.regex'=>"Format de téléphone invalide",   
         'prefix.regex'=>"Votre préfixe doit se composer d'un '+' suivi de 2 chiffres",   
             
@@ -57,7 +57,7 @@ class message extends Request
         'commentaire.max'=>"Maximum 500 caractères",
             
         'pseudo.required'=>"Choisissez un pseudo",
-        'type.required'=>"Ce champ est obligatoire",
+        'type.required'=>"Choisissez un type",
             
           
    

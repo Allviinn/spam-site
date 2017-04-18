@@ -21,7 +21,6 @@ class validation extends Controller
         
         $numero = $request->input('numero');
 		$type = $request->input('type');
-		$qualite = $request->input('qualite');
 		$commentaire = $request->input('commentaire');
 		$email = $request->input('email');
 		$pseudo = $request->input('pseudo');

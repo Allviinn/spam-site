@@ -27,3 +27,28 @@ $('#email').on('change', function(e) {
     
     
 });
+
+
+
+$('#prefix').on('change paste keyup', function() {
+    
+    var prefixe = $(this).val().length;
+//    console.log(prefixe);
+//    
+//    var num = $("#prefix").val().substr(0, 3);
+//    
+    if ( prefixe >= 3) {
+        $("#numero").focus();
+//        $("#prefix").val(num);
+    }
+    
+});
+
+
+
+
+
+
+
+
+
