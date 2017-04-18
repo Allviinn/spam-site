@@ -121,16 +121,17 @@ $(document).ready(function() {
 
         $("#modalForm").show().animate({opacity:1}, 50);
         $("#divFormSignal").css('z-index', '6');
+
             $('.radioSignal').change(function() {
     
                 var radio = $('.radioSignal:checked').val();
         
                 if(radio == 'Autre raisons') {
-                    $('#textAutreRaison').css('opacity', '1');
-                     $("#textAutreRaison").prop('disabled', false);
+                  $('#textAutreRaison').css({'opacity': '1'});
+                    $('#textAutreRaison').animate({'height': '100px'});
                 } else if (radio !== 'Autre raisons') {
-                    $('#textAutreRaison').css('opacity', '5');
-                    $("#textAutreRaison").prop('disabled', true);
+                  $('#textAutreRaison').css({'opacity': '0'});
+                    $('#textAutreRaison').animate({'height': '0px'});
                 }
     
             });
