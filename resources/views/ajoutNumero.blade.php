@@ -36,7 +36,9 @@
             @if(isset($prefixA))
                 
                   <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" value="{{ $prefixA }}"> 
-               
+            @else
+             <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33"> 
+
            @endif
             
 
@@ -44,7 +46,9 @@
                 
                 <input class="input" type="text" name="numero" id="numero" placeholder=" Ex : 0623586092" value="{{ $numerosA }}"><br>
                 {!! $errors->first('prefix', '<small class="help-block">:message</small>') !!} {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
-                
+                @else
+                  <input class="input" type="text" name="numero" id="numero" placeholder=" Ex : 0623586092"><br>
+                {!! $errors->first('prefix', '<small class="help-block">:message</small>') !!} {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
            @endif
            
             
