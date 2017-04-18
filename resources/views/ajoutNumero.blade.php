@@ -35,7 +35,7 @@
            
             @if(isset($prefixA))
                 
-                  <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" value="{{ $prefixA }}"> 
+                  <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" value="+{{ $prefixA }}"> 
             @else
              <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" maxlength="3"> 
 
