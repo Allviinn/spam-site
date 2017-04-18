@@ -97,7 +97,7 @@ $(document).ready(function() {
                       a.css('display','block');
                       celuiLa.css('display','none');
                       divCom.css({ 'max-height': hauteur, 'height' :'auto'});
-                      $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box'});
+                      $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box', 'text-align':'justify'});
                     }
                 }
         });
