@@ -26,7 +26,7 @@
           <div class="haut_numero">
             <p>
               <strong class="numeroTel">
-                {{$numero->numero}}
+                +{{$numero->prefix}} {{$numero->numero}}
               </strong>
             </p>
             <a href="/" class="lien">Retour à l'accueil</a>
@@ -34,7 +34,10 @@
 
           <div class="bas_numero">
             <p class="type">
-              {{$numero->type}}
+              Pays : {{$pays}}
+            </p>
+            <p class="type">
+              Type : {{$numero->type}}
             </p>
 
             <p>
@@ -93,12 +96,12 @@
 <div id="divFormSignal">
 
   <div id="divopacity">
-  
+
                 <h5 id="h4raph"> Pour quelle raisons souhaitez-vous signaler ce commentaires </h5>
-  
+
     <form id="formSignal" action="insertSignal" method="post">
-  
-  
+
+
       <input type="radio" name="signaler" class="radioSignal" value="Contenu offansant">Contenu offansant<br>
       <input type="radio" name="signaler" class="radioSignal" value="Mauvaise information">Mauvaise information<br>
       <input type="radio" name="signaler" class="radioSignal" value="Présence d'info privées">Présence d'info privées<br>
@@ -110,7 +113,7 @@
       <input type="hidden" name="idCom" value="" id="idCom">
       <input type="submit" value="Signaler" id="signaler">
   </form>
-  
+
   </div>
 
 

@@ -10,7 +10,11 @@ label{
 body{
     background-image: url(../graphisme/graphismes/images/fond-commentaire.jpg);
 }
-
+.prefix{
+    width: 80px;
+    border-radius: 10px;
+    border:1px solid #3c3c3b;
+}
 header {
 
     padding-top: 5px;

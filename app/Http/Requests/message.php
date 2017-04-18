@@ -26,7 +26,9 @@ class message extends Request
         return [
             
             'numero' =>array ('required',
-            'regex:/(00)[0-9]{5,20}$|\+[0-9]{5,20}$/'),
+            'regex:/[0-9]{5,20}$/'),
+            'prefix' =>array ('required',
+            'regex:/\+[0-9]{2}$/'),
             'email' => 'required|email|max:255',
             'commentaire' => 'required|max:255',
             'type' => 'required',
