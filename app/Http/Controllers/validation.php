@@ -20,7 +20,6 @@ class validation extends Controller
   
         
         $numero = $request->input('numero');
-        $numeroSansZero = substr($numero,1,20);
 		$type = $request->input('type');
 		$qualite = $request->input('qualite');
 		$commentaire = $request->input('commentaire');
@@ -35,6 +34,10 @@ class validation extends Controller
         $numeros = new spam_numeros;   
         $auteurs = new spam_auteurs;   
         $commentaires = new spam_commentaires; 
+        
+        if($numero[0]=='0'){
+        $numero = substr($numero,1,20);        
+        }
         
          
         $idAuteur = $auteurs::select('id')
@@ -59,7 +62,7 @@ class validation extends Controller
         if(!isset($idnum->id)){
             
             $insertionNmero =  $numeros::insertGetId(
-                ['numero' => $numeroSansZero,
+                ['numero' => $numero,
                  'prefix' =>$prefixSansPlus,
                  'type' =>$type,
                  'date_ajout' =>$date,

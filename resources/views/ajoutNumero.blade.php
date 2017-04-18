@@ -36,7 +36,8 @@
   
             <input  class="prefix" type="text" name="prefix" id="prefix" placeholder="Ex:+33" > 
            
-            <input class="input  " type="text" name="numero" id="numero" placeholder=" Ex : 0623586092"><br>
+            
+            <input class="input" type="text" name="numero" id="numero" placeholder=" Ex : 0623586092"><br>
             {!! $errors->first('prefix', '<small class="help-block">:message</small>') !!} {!! $errors->first('numero', '<small class="help-block">:message</small>') !!}<br>
            
            
@@ -63,6 +64,7 @@
 
             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
             <input class ="bouton" type="submit" id="submit" value="Valider">
+            
 
         </form>
         

@@ -46,8 +46,9 @@ class message extends Request
         return [
         
         'numero.required'=>"Entrez un numéro de téléphone",   
+        'prefix.required'=>"Entrez un préfixe",   
         'numero.regex'=>"Format de téléphone invalide",   
-        'prefix.regex'=>"votre préfixe doit se composer d'un '+' suivi de 2 chiffres",   
+        'prefix.regex'=>"Votre préfixe doit se composer d'un '+' suivi de 2 chiffres",   
             
         'email.required'=>"Entrez votre email",  
         'email.email'=>"Adresse email non valide",
