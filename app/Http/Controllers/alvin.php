@@ -96,8 +96,7 @@ class alvin extends Controller
             $numA = $_POST['numeroA'];
             $prefixA = $_POST['prefixA'];
 
-            echo $numA;
-            echo $prefixA;
+            
 
             return view('ajoutNumero', array('numerosA'=>$numA, 'prefixA'=>$prefixA));
 
