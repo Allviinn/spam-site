@@ -25,6 +25,8 @@ class validation extends Controller
 		$commentaire = $request->input('commentaire');
 		$email = $request->input('email');
 		$pseudo = $request->input('pseudo');
+		$prefix = $request->input('prefix');
+		$prefixSansPlus = substr($prefix,1,2);
 		$today = getdate();
 		$date = date("d/m/Y");   
         
@@ -32,6 +34,10 @@ class validation extends Controller
         $numeros = new spam_numeros;   
         $auteurs = new spam_auteurs;   
         $commentaires = new spam_commentaires; 
+        
+        if($numero[0]=='0'){
+        $numero = substr($numero,1,20);        
+        }
         
          
         $idAuteur = $auteurs::select('id')
@@ -54,9 +60,10 @@ class validation extends Controller
         
             
         if(!isset($idnum->id)){
-        
+            
             $insertionNmero =  $numeros::insertGetId(
                 ['numero' => $numero,
+                 'prefix' =>$prefixSansPlus,
                  'type' =>$type,
                  'date_ajout' =>$date,
                  'id_spam_auteurs' =>$insertionAuteur
@@ -95,7 +102,7 @@ class validation extends Controller
         $commentaires = new spam_commentaires; 
         
         $toutNumero = $numero::join("spam_commentaires","spam_numeros.id","=","spam_commentaires.id_spam_numeros")
-                    ->select('spam_commentaires.id as id','spam_numeros.numero','spam_numeros.type' ,DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
+                    ->select('spam_commentaires.id as id','spam_numeros.numero','spam_numeros.type','spam_numeros.prefix' ,DB::raw("count(spam_commentaires.id_spam_numeros) as count"))
                     ->groupBy('spam_numeros.id')
                     ->orderBy('count','DESC')
                     ->limit(10)

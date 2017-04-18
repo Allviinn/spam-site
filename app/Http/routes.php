@@ -37,5 +37,10 @@ Route::post('pseudoExiste', 'validation@pseudo');
 Route::post('insertSignal', 'alvin@passId');
 
 
+//Ajout d'un commentaire à un numéro dans la page d'accueil : redirection vers page d'ajout de numéro(ou de commentaire) avec les champs "prefix" et "numéro" préremplis.
+Route::post('addComment', 'alvin@addComent');
+
+
+
 //redirection vers la page "à propos"
 Route::get('a_propos', 'alvin@index');

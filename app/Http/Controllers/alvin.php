@@ -90,5 +90,16 @@ class alvin extends Controller
        			
 
        	}
+
+        public function addComent(Request $request) {
+
+            $numA = $_POST['numeroA'];
+            $prefixA = $_POST['prefixA'];
+
+            
+
+            return view('ajoutNumero', array('numerosA'=>$numA, 'prefixA'=>$prefixA));
+
+        }
        
 }
