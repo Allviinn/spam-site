@@ -11,6 +11,7 @@ use App\spam_commentaires;
 use App\spam_numeros;
 use App\spam_signalements;
 use App\spam_join_signalers;
+use App\spam_prefixs;
 
 class alvin extends Controller
 {
@@ -96,9 +97,20 @@ class alvin extends Controller
             $numA = $_POST['numeroA'];
             $prefixA = $_POST['prefixA'];
 
+            $tab =array();
+        
+            $prefix = new spam_prefixs; 
+            $codePays = $prefix::all();
+        
+            foreach ($codePays as $pays){
+                if (strlen($pays->code)==2){
+                    array_push($tab, $pays);    
+                }
+            }
+        
             
 
-            return view('ajoutNumero', array('numerosA'=>$numA, 'prefixA'=>$prefixA));
+            return view('ajoutNumero', array('numerosA'=>$numA, 'prefixA'=>$prefixA, "prefix"=>$tab));
 
         }
        

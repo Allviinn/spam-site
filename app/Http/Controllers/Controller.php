@@ -21,9 +21,9 @@ class Controller extends BaseController
         $codePays = $prefix::all();
         
         foreach ($codePays as $pays){
-        if (strlen($pays->code)==2){
-        array_push($tab, $pays);    
-        }
+            if (strlen($pays->code)==2){
+                array_push($tab, $pays);    
+            }
         }
         
 //      dd ($tab);    
