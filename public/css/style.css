@@ -106,6 +106,13 @@ span {
     cursor: pointer;
 }
 
+.g-recaptcha {
+    display: inline-block;
+}
+
+#submit {
+    display: none;
+}
 @media all and (min-width: 992px) {
     /* largeur mobile */
     #headerDiv2 {

@@ -12,6 +12,9 @@
      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     
 
+       
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
     </head>
     <body>
         
@@ -67,11 +70,11 @@
             
            
            <textarea cols="50" rows="6" name=" commentaire" id="commentaire" class="input" placeholder=" Votre commentaire" ></textarea><br>
-            {!! $errors->first('commentaire', '<small class="help-block">:message</small>') !!}<br><br>
+            {!! $errors->first('commentaire', '<small class="help-block">:message</small>') !!}
             
            
           
-
+            <div class="g-recaptcha" data-sitekey="6LeS4B0UAAAAAEMoTWW-H_uVo61SnViyZzgbxoLZ"></div><br>
             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
             <input class ="bouton" type="submit" id="submit" value="Valider">
             
@@ -91,7 +94,8 @@
         
         </div>
 
+ <script type="text/javascript" src="{{ URL::to('js/ibtissem.js') }}"></script>
 
-        <script type="text/javascript" src="{{ URL::to('js/ibtissem.js') }}"></script>
+
     </body>
 </html>

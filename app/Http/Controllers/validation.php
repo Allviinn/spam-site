@@ -28,69 +28,75 @@ class validation extends Controller
 		$prefixSansPlus = substr($prefix,1,2);
 		$today = getdate();
 		$date = date("d/m/Y");   
-        
+        $token = $request->input('g-recaptcha-response');
         
         $numeros = new spam_numeros;   
         $auteurs = new spam_auteurs;   
         $commentaires = new spam_commentaires; 
         
-        if($numero[0]=='0'){
-        $numero = substr($numero,1,20);        
-        }
-        
-         
-        $idAuteur = $auteurs::select('id')
-            ->where('email', '=', $email)
-            ->first();
-        
-        if(!isset($idAuteur->id)){
+        if(strlen($token) > 0) {
+
+            if($numero[0]=='0'){
+            $numero = substr($numero,1,20);        
+            }
             
-        $insertionAuteur =  $auteurs::insertGetId(
-                ['pseudo' => $pseudo,'email' => $email]
-         );    
-        }else {
-            $insertionAuteur = $idAuteur->id;
-        }   
-        
-        $idnum = $numeros::select('id')
-            ->where('numero', '=', $numero)
-            ->first();
-      
-        
+             
+            $idAuteur = $auteurs::select('id')
+                ->where('email', '=', $email)
+                ->first();
             
-        if(!isset($idnum->id)){
-            
-            $insertionNmero =  $numeros::insertGetId(
-                ['numero' => $numero,
-                 'prefix' =>$prefixSansPlus,
-                 'type' =>$type,
-                 'date_ajout' =>$date,
-                 'id_spam_auteurs' =>$insertionAuteur
+            if(!isset($idAuteur->id)){
                 
-                ]
-            ); 
+            $insertionAuteur =  $auteurs::insertGetId(
+                    ['pseudo' => $pseudo,'email' => $email]
+             );    
+            }else {
+                $insertionAuteur = $idAuteur->id;
+            }   
+            
+            $idnum = $numeros::select('id')
+                ->where('numero', '=', $numero)
+                ->first();
         
-            $insertioncommentaire = $commentaires::insert(
-                ['commentaire' => $commentaire,
-                 'date_commentaire' =>$date,
-                 'id_spam_auteurs' =>$insertionAuteur,
-                 'id_spam_numeros' =>$insertionNmero
+            
                 
-                ]
-            );         
-     
+            if(!isset($idnum->id)){
+                
+                $insertionNmero =  $numeros::insertGetId(
+                    ['numero' => $numero,
+                     'prefix' =>$prefixSansPlus,
+                     'type' =>$type,
+                     'date_ajout' =>$date,
+                     'id_spam_auteurs' =>$insertionAuteur
+                    
+                    ]
+                ); 
+            
+                $insertioncommentaire = $commentaires::insert(
+                    ['commentaire' => $commentaire,
+                     'date_commentaire' =>$date,
+                     'id_spam_auteurs' =>$insertionAuteur,
+                     'id_spam_numeros' =>$insertionNmero
+                    
+                    ]
+                );         
+        
+            } else {
+            
+                $insertioncommentaire = $commentaires::insert(
+                    ['commentaire' => $commentaire,
+                     'date_commentaire' =>$date,
+                     'id_spam_auteurs' =>$insertionAuteur,
+                     'id_spam_numeros' =>$idnum->id
+                    
+                    ]
+                );             
+            
+            }
         } else {
-        
-            $insertioncommentaire = $commentaires::insert(
-                ['commentaire' => $commentaire,
-                 'date_commentaire' =>$date,
-                 'id_spam_auteurs' =>$insertionAuteur,
-                 'id_spam_numeros' =>$idnum->id
-                
-                ]
-            );             
-        
+            return view('ajoutNumero');
         }
+
 
        
     }
