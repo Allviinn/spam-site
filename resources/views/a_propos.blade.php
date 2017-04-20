@@ -13,7 +13,7 @@
 		<header>
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="/"><img src="graphisme/graphismes/images/icone-logo.png" width="50"></a></div>
+                    <div class="col-1 col-sm-1 col-md-1 col-lg-1 col-xl-1"><a href="/spam_site/public/"><img src="graphisme/graphismes/images/icone-logo.png" width="50"></a></div>
                     <div id="headerDiv2" class="offset-5 col-5 offset-sm-7 col-sm-4 offset-md-8 col-md-3 offset-lg-8 col-lg-2 offset-xl-7 col-xl-3"><a href="a_propos">UN SPAM ?</a></div>
                         
                 </div>

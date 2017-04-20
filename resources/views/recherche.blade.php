@@ -29,7 +29,7 @@
                 +{{$numero->prefix}} {{$numero->numero}}
               </strong>
             </p>
-            <a href="/" class="lien">Retour à l'accueil</a>
+            <a href="/spam_site/public/" class="lien">Retour à l'accueil</a>
           </div>
 
           <div class="bas_numero">
