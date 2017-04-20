@@ -23,8 +23,13 @@ class morgane extends Controller
       {
         $numBDD = substr($numRecherche,1,20);
       }
-      else if ($numRecherche[0] == '+'){
+      else if ($numRecherche[0] == '+')
+      {
         $numBDD = substr($numRecherche,3,20);
+      }
+      else
+      {
+        $numBDD = substr($numRecherche,0,20);
       }
       $numeros = $numero::select('*')
           ->where('numero', $numBDD)
