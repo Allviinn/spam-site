@@ -53,44 +53,83 @@ class alvin extends Controller
     }
 
 
-    public function passId( Request $request) {
+    public function insertSignalRecherche( Request $request) {
 
         //insertion dans la BDD d'un signalement d'un commentaire abusif
-        
-    	    $raisonRadio = $request->input('signaler');
-            $autreRaison = $request->input('textAutreRaison');
-            $idSignal = $request->input('idCom');
-            
-            
-            
-            $spam_auteurs = new spam_auteurs;   
-            $spam_commentaires = new spam_commentaires;
-            $spam_signalements = new spam_signalements;
-            $spam_join = new spam_join_signalers;
-            
-            $idSignalement =  $spam_signalements::insertGetId(
-                ['raison' => $raisonRadio,'description' => $autreRaison]
-            );
-            
-            
-            $idAuteurs = $spam_commentaires::select('id_spam_auteurs')->where('id', $idSignal)->first();
-            $idAuteur = $idAuteurs->id_spam_auteurs;
-            
-            $idTableCommentaires = $spam_commentaires::select('id')->where('id', $idSignal)->first();
-            $idCommentaire = $idTableCommentaires->id;
-           
-
-            $insertioncommentaire = $spam_join::insert(
-                    ['id_spam_auteurs' => $idAuteur,
-                     'id_spam_signalements' =>$idSignalement,
-                     'id_spam_commentaires' =>$idCommentaire
-                    
-                    ]
+            if($request->ajax()) {
+    	       $raisonRadio = $_POST['raisonSignal'];
+                $autreRaison = $_POST['textAutreRaison'];
+                $idSignal = $_POST['idCom'];
+                
+                
+                $spam_auteurs = new spam_auteurs;   
+                $spam_commentaires = new spam_commentaires;
+                $spam_signalements = new spam_signalements;
+                $spam_join = new spam_join_signalers;
+                
+                $idSignalement =  $spam_signalements::insertGetId(
+                    ['raison' => $raisonRadio,'description' => $autreRaison]
                 );
-
-       			
-
+                
+                
+                $idAuteurs = $spam_commentaires::select('id_spam_auteurs')->where('id', $idSignal)->first();
+                $idAuteur = $idAuteurs->id_spam_auteurs;
+                
+                $idTableCommentaires = $spam_commentaires::select('id')->where('id', $idSignal)->first();
+                $idCommentaire = $idTableCommentaires->id;
+            
+    
+                $insertioncommentaire = $spam_join::insert(
+                        ['id_spam_auteurs' => $idAuteur,
+                         'id_spam_signalements' =>$idSignalement,
+                         'id_spam_commentaires' =>$idCommentaire
+                        
+                        ]
+                    );
+    
+       		   	echo 'Je crois que ca marche';
+            }
        	}
+
+
+
+        public function insertSignalAccueil( Request $request) {
+
+        //insertion dans la BDD d'un signalement d'un commentaire abusif
+            if($request->ajax()) {
+                $raisonRadio = $_POST['raisonSignalAccueil'];
+                $autreRaison = $_POST['textAutreRaisonAccueil'];
+                $idSignal = $_POST['idComAccueil'];
+  
+                
+                $spam_auteurs = new spam_auteurs;   
+                $spam_commentaires = new spam_commentaires;
+                $spam_signalements = new spam_signalements;
+                $spam_join = new spam_join_signalers;
+                
+                $idSignalement =  $spam_signalements::insertGetId(
+                    ['raison' => $raisonRadio,'description' => $autreRaison]
+                );
+                
+                
+                $idAuteurs = $spam_commentaires::select('id_spam_auteurs')->where('id', $idSignal)->first();
+                $idAuteur = $idAuteurs->id_spam_auteurs;
+                
+                $idTableCommentaires = $spam_commentaires::select('id')->where('id', $idSignal)->first();
+                $idCommentaire = $idTableCommentaires->id;
+            
+    
+                $insertioncommentaire = $spam_join::insert(
+                        ['id_spam_auteurs' => $idAuteur,
+                         'id_spam_signalements' =>$idSignalement,
+                         'id_spam_commentaires' =>$idCommentaire
+                        
+                        ]
+                    );
+    
+                    echo 'je cois que ca marche';
+            }
+        }
 
         public function addComent(Request $request) {
 

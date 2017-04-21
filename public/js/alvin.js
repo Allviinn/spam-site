@@ -119,6 +119,52 @@ $(document).ready(function() {
 //------------------------------------------------------------------------------------------
 
 
+//fonction ajax qui signal un commentaire abusif depuis la page d'accueil
+
+$('#signaler').on('click', function(event){
+
+        event.preventDefault();
+
+        var textAutreRaisonAccueil = $('#textAutreRaison').val();
+        var raisonSignalAccueil = $('.radioSignal:checked').val();
+        var tokenSignalAccueil = $('#tokenSignalAccueil').attr('value');
+        var idComAccueil = $('#idCom').attr('value');
+
+        $.ajax({
+                type:'POST',
+                url:'signalCommentaireAccueil',
+                data: {
+                   "_token": tokenSignalAccueil,
+                   "textAutreRaisonAccueil": textAutreRaisonAccueil,
+                   "raisonSignalAccueil": raisonSignalAccueil,
+                   "idComAccueil": idComAccueil
+                   },
+                success:function(data){
+                  console.log(data)
+                     $('#reponseSignal').css('display', 'block');
+                      
+                      setTimeout(function(){ 
+
+                          $('#reponseSignal').css('display', 'none'); 
+                           $("#modalForm").hide('slow').animate({opacity:0});
+                            $('.radioSignal').prop('checked', false);
+                            $('#textAutreRaison').val('');
+                        }, 3000);
+                      
+                }
+        });
+
+
+
+    });
+
+
+
+
+//-------------------------------------------------
+
+
+
 //au clique sur 'commentaire abusif' sur la page d'accueil, on fait apparître le formulaire de signalement d'un 
 //commentaire
     $('.commentairesAccueil').on('click', '.signalCom', function(e) {

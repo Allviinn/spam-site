@@ -291,6 +291,14 @@ header a:hover {
 	text-decoration: none;
 }
 
+#reponseSignal {
+	margin-top: 20px;
+	border: 1px solid #c6002b;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: none;
+}
+
 
 @media screen and (max-width: 576px) { 			/* largeur mobile */
 

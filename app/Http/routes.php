@@ -33,8 +33,14 @@ Route::post('recherche', 'morgane@rechercheNumero');
 Route::post('pseudoExiste', 'validation@pseudo');
 
 
-//signalement d'un commentaire abusif, insertion dans la BDD des raisons de signalements....
-Route::post('insertSignal', 'alvin@passId');
+//signalement d'un commentaire abusif depuis la page de recherche, insertion dans la BDD des raisons de signalements....
+Route::post('signalCommentaireRecherche', 'alvin@insertSignalRecherche');
+
+
+
+//signalement d'un commentaire abusif depuis la page d'accueil, insertion dans la BDD des raisons de signalements....
+Route::post('signalCommentaireAccueil', 'alvin@insertSignalAccueil');
+
 
 
 //Ajout d'un commentaire à un numéro dans la page d'accueil : redirection vers page d'ajout de numéro(ou de commentaire) avec les champs "prefix" et "numéro" préremplis.

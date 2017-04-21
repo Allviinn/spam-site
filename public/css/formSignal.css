@@ -1,117 +1,136 @@
-#divopacity {
+#divFormSignal {
 	position: absolute;
-	width: 50%;
-	left: 25%;
+	width: 80%;
+	left: 10%;
 	top: 20%;
 	background-color: white;
-	padding: 30px;
 	border-radius: 5px;
-	color: #5e000e;
-	display: none;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 30px;
 }
-
-
 
 #divFormSignal h5 {
-
+	margin-bottom: 20px;
+	text-align: center;
 	color: #5e000e;
-	font-size: 20px;
 }
 
 
-.radioSignal {
-	margin-left: 50px;
-	margin-top: 10px;
+
+#css {
+	padding: 0px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	font-size: 15px;
 }
 
 #textAutreRaison {
-	width: 80%;
-	margin-left: 10%;
+	width: 90%;
+	left: 5%;
 	height: 100px;
+	height: 0px;
 	opacity: 0;
-	transition: opacity 0.5s;
+	-webkit-transition: opacity 0.75s;
+	-moz-transition: opacity 0.75s;
+	-o-transition: opacity 0.75s;
+	transition: opacity 0.75s;
 }
 
 #signaler {
-	width: 40%;
-	margin: auto;
-	display: block;
-	padding: left: 20px;
-	padding-right: 20px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 	border: 1px solid #c6002b;
 	background-color: #c6002b;
+	color: white;
 	border-radius: 5px;
-	color:white;
+	text-align: center;
 }
 
-#divFormSignal {
-
-	position: absolute;
+#modalForm {
+	position: fixed;
+	background-color: grey;
 	height: 100%;
 	width: 100%;
 	top: 0%;
 	background: rgba(169, 169, 169, 0.7);
 	transition: opacity 0.5s;
+	opacity: 0;
 	display: none;
+}
+
+#croixSignal {
+	text-decoration: none;
+	position: absolute;
+	top: 3%;
+	right: 5%;
+	color: #c6002b;
+	font-weight: bold;
+}
+
+#croixSignal:hover {
+	text-decoration: none;
+}
+
+#reponseSignal {
+	margin-top: 20px;
+	border: 1px solid #c6002b;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	display: none;
+}
+
+@media screen and (min-width: 576px) { 			/* largeur mobile */
+
+
+  	#formSignal {
+  		width: 80%;
+  	}
+
+  	#css {
+  		width: 60%;
+  		margin-left: 30%;
+  	}
 
 }
 
-@media screen and (max-width:768px) {
+@media screen and (min-width: 768px) { 			/* largeur mobile */
 
-	#divopacity {
+  	#divFormSignal {
+  		width: 70%;
+  		left: 15%;
+  	}
 
-		font-size: 10px;
-		height: auto;
-		width: 80%;
-		left: 10%;
+}
 
-	}
+@media screen and (min-width: 992px) { 			/* largeur mobile */
+
+  	#divFormSignal {
+  		width: 50%;
+  		left: 25%;
+  	}
 
 
 }
 
+@media screen and (min-width: 1200px) { 			/* largeur mobile */
 
-@media screen and (max-width:390px) {
 
-	#divopacity {
+	#formRechercheNum {
+  		width: 20%;
+  		left: 40%;
+  	}
 
-		font-size: 10px;
-		height: auto;
-		width: 90%;
-		left: 5%;
-		padding: 10px;
+  	#css {
+  		margin-left: 33%;
+  	}
 
-	}
-
-	#divFormSignal {
-
-		padding-left: 10px;
-
-	}
-
-	#divFormSignal h5 {
-
-		font-size: 12px;
-		text-align: center;
-		
-	}
-
-	#signaler {
-
-		width: 60px;
-
-	}
-
-	.radioSignal {
-
-	margin-left: 5px;
-	margin-top: 1px;
-	
-	}
-
-	
 }
 
 

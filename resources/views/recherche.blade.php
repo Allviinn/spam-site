@@ -93,31 +93,33 @@
 
   </section>
 
-<div id="divFormSignal">
+<!-- FORMULAIRE DE SIGNALEMENT D'UN COMMENTAIRE ABUSIF -->
+<div id="modalForm">
+    <div id="divFormSignal">
 
-  <div id="divopacity">
+        <h5> Pour quelle raisons souhaitez-vous signaler ce commentaire </h5>
 
-                <h5 id="h4raph"> Pour quelle raisons souhaitez-vous signaler ce commentaires </h5>
+        <a href="" id="croixSignal">X</a>
+        <form id="formSignal">
 
-    <form id="formSignal" action="insertSignal" method="post">
+            <div id="css">
+                <div><input type="radio" name="signaler" class="radioSignal" value="Contenu offansant">Contenu offensant</div><br>
+                <div><input type="radio" name="signaler" class="radioSignal" value="Info fausse">Infos fausses</div><br>
+                <div><input type="radio" name="signaler" class="radioSignal" value="Présence d'info privées">Présence d'infos   privées   </div  ><br>
+                <div><input type="radio" name="signaler" class="radioSignal" value="Autre raisons">Autres raisons</div><br>
+            </div>
 
+            <textarea type="text"  name="textAutreRaison" id="textAutreRaison" placeholder="Autre raisons"> </textarea>
+                 <br>
+            <input type="hidden" name="_token" id="tokenRecherche" value="{{ csrf_token() }}">
+            <input type="hidden" name="idCom" value="" id="idCom">
+            <input type="submit" value="Signaler" id="signaler">
+            <div id="reponseSignal">Nous avons pris note de ce commentaire, et nous le supprimerons si nécessaire</div>
+        </form>
 
-      <input type="radio" name="signaler" class="radioSignal" value="Contenu offansant">Contenu offansant<br>
-      <input type="radio" name="signaler" class="radioSignal" value="Mauvaise information">Mauvaise information<br>
-      <input type="radio" name="signaler" class="radioSignal" value="Présence d'info privées">Présence d'info privées<br>
-      <input type="radio" name="signaler" class="radioSignal" value="Autre raisons">Autre raisons<br>
-  <br><br>
-      <textarea type="text"  name="textAutreRaison" id="textAutreRaison" placeholder="Autre raisons"> </textarea>
-  <br><br>
-      <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
-      <input type="hidden" name="idCom" value="" id="idCom">
-      <input type="submit" value="Signaler" id="signaler">
-  </form>
-
-  </div>
-
-
+    </div>
 </div>
+<!-- ------ -->
 
 <script type="text/javascript" src="{{URL::to('js/ajaxSignalement.js')}}"></script>
 
