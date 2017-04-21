@@ -46,18 +46,7 @@ $(document).ready(function() {
 
 
 
-
-        //$('#form form').on('click', '.recaptcha-checkbox-checkmark', function() {
-        //   $('#submit').css('display', 'block');
-        //});
-
-        //var tok = $('#g-recaptcha-response').val();
-        //console.log(tok);
-        //if(tok == null) {
-//
-        //} else {
-        //    $('#submit').css('display', 'block');
-        //}
+           
     
 
 

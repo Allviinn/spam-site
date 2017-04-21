@@ -12,7 +12,7 @@
      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     
 
-       
+        <script type="text/javascript" src="{{ URL::to('js/ibtissem.js') }}"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
     </head>
@@ -34,7 +34,7 @@
         <h1 id="h1">Déclarer un numéro</h1>
         
         <div id="form">
-        <form action="traitement" method="post">
+        <form action="traitement" method="post" id="formulaireAjouteNum">
            
             @if(isset($prefixA))
                 
@@ -74,7 +74,7 @@
             
            
           
-            <div class="g-recaptcha" data-sitekey="6LeS4B0UAAAAAEMoTWW-H_uVo61SnViyZzgbxoLZ"></div><br>
+            <div class="g-recaptcha" data-sitekey="6LcOFR4UAAAAAHGLnIk1jwKLaCMKbgRnp5rzk1vx" data-callback="recaptcha"></div><br>
             <input type="hidden" id="token" name="_token" value="{{ csrf_token() }}">
             <input class ="bouton" type="submit" id="submit" value="Valider">
             
@@ -94,7 +94,30 @@
         
         </div>
 
- <script type="text/javascript" src="{{ URL::to('js/ibtissem.js') }}"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+  <script type="text/javascript">
+    
+  $(function() {
+
+        $('#formulaireAjouteNum').submit(function(event) {
+
+          var verified = grecaptcha.getResponse();
+
+          if(verified.length === 0) {
+            event.preventDefault();
+              alert('Veuillez cocher la case "Je ne suis pas un robot" ');
+          }
+
+        });
+
+  });
+
+
+  </script>
 
 
     </body>

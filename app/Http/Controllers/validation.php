@@ -9,6 +9,7 @@ use App\Http\Requests\message;
 use App\spam_auteurs;
 use App\spam_commentaires;
 use App\spam_numeros;
+use App\spam_prefixs;
 use DB;
 
 
@@ -34,6 +35,7 @@ class validation extends Controller
         $auteurs = new spam_auteurs;   
         $commentaires = new spam_commentaires; 
         
+
         if(strlen($token) > 0) {
 
             if($numero[0]=='0'){
@@ -93,8 +95,22 @@ class validation extends Controller
                 );             
             
             }
+
+            $tab =array();
+            $prefixTable = new spam_prefixs;
+            $codePays = $prefixTable::all();
+            
+            foreach ($codePays as $pays){
+                if (strlen($pays->code)==2){
+                    array_push($tab, $pays);    
+                }
+            }
+              
+            return view('ajoutNumero',array("prefix"=>$tab));
+
+
         } else {
-            return view('ajoutNumero');
+            echo 'Veuillez retourner en arrière et cocher la case "Je ne suis pas un robot"';
         }
 
 
