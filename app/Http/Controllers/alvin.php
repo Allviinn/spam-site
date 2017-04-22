@@ -40,6 +40,7 @@ class alvin extends Controller
             join('spam_commentaires','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
             ->select('*', 'spam_commentaires.id AS id')
             ->where('spam_commentaires.id_spam_numeros',$idNumeroA)
+            ->limit(5)
             ->get();
 
        

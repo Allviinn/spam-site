@@ -78,7 +78,8 @@ $(document).ready(function() {
         var numero = $(this).attr('data-numero');
         var a = $(this).siblings('a');
         //var divCom = $(this).parent().siblings('div');
-        var divCom = $(this).parent().parent().siblings('div');
+        var divCom = $(this).parent().parent().siblings('div').children().first();
+        var divPlusCom = $(this).parent().parent().siblings('div').children().last();
         
         $.ajax({
                 type:'POST',
@@ -98,7 +99,10 @@ $(document).ready(function() {
                       celuiLa.css('display','none');
                       divCom.css({ 'max-height': hauteur, 'height' :'auto'});
                       $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box', 'text-align':'justify'});
+                      divPlusCom.css('height', '25px');
                     }
+
+                    
                 }
         });
     });
@@ -107,14 +111,14 @@ $(document).ready(function() {
                                     
                                     var celuiLa = $(this);
                                     var a = $(this).siblings('a');
-                                    var divCom= $(this).parent().parent().siblings('div');
-                            
+                                    var divCom = $(this).parent().parent().siblings('div').children().first();
+                                    var divPlusCom = $(this).parent().parent().siblings('div').children().last();
                                     event.preventDefault();
+                                    divPlusCom.css('height', '0px');
                                     celuiLa.css('display','none');
                                     a.css('display','block');
                                     divCom.empty();
                                     divCom.css({"max-height": "0px"});
-                                                  
                                 }); 
 //------------------------------------------------------------------------------------------
 
