@@ -106,6 +106,52 @@ $(document).ready(function() {
                 }
         });
     });
+
+    //affichage de commentaires suplémentaires en cliquant sur "Plus..."
+
+        var minimum = 5;
+        var limit = 5;
+    $('.lienPlusCom').on('click', function(e) {
+
+        e.preventDefault();
+        var numero = $(this).attr('data-numeroPlus');
+        //var divCom = $(this).parent().siblings('div');
+        var divCom = $(this).parent().siblings('div');
+
+        
+        
+        $.ajax({
+                type:'POST',
+                url:'numAccueil',
+                data: {
+                   "_token": $('#tokenPlus').attr('value'),
+                   "numero": numero,
+                   "minimum": minimum,
+                   "limit": limit
+                   },
+                success:function(data){
+                  divCom.empty();
+                  var hh = (data.auteursA.length);
+                  var height = hh * 500;
+                   for (var k = 0; k < data.auteursA.length ; k++) {
+                       
+                      
+                      divCom.append('<div style="border-bottom: 1px solid grey;" class="divComentaire"><p class="col-12 pseudoCommentaires" style="font-weight: bold">'+ data.auteursA[k].pseudo +' :</p><p class="col-12 descCommentaires">'+ data.auteursA[k].commentaire +'</p><a href="#" class="col-3 offset-md-8 col-md-4 offset-lg-9 col-lg-3 signalCom" data-id="' + data.auteursA[k].id + '" style="color: #c6002b;">Commentaire abusif ?</a></div>');
+                      divCom.css({ 'max-height': height, 'height' :'auto'});
+                      $('.divComentaire').css({'padding': '15px', 'box-sizing':'border-box', 'text-align':'justify'});
+                    }
+
+                   if(data.auteursA.length < 5) {
+                        minimum = 0;
+                   } else {
+                       minimum = minimum + limit;
+                    }
+                  //console.log(data); 
+                }
+        });
+
+                  
+    });
                                 //on cache les commentaires que l'on vien d'afficher
                                 $('.hideComments').on('click', function(event) {
                                     

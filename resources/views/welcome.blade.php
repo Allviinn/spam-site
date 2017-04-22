@@ -101,7 +101,7 @@
                 </article>
                 <div class="commentairesAccueil">
                     <div class="commentairesAccueilFirst"></div>
-                    <div class="col-12 divPlusCom"><a href="" class="lienPlusCom">Plus...</a></div>
+                    <div class="col-12 divPlusCom"><a href="" class="lienPlusCom" data-numeroPlus="{{ $numero->numero }}">Plus...</a></div>
                 </div>
             </div>
             @endforeach
@@ -141,6 +141,11 @@
 
 <form>
     <input type="hidden" id="token1" name="_token" value="{{ csrf_token() }}">
+
+</form>
+<!--TOKEN A ENVOYER EN AJAX POUR AFFICHAGE DE PLUS COMMENTAIRES -->
+<form>
+    <input type="hidden" id="tokenPlus" name="_token" value="{{ csrf_token() }}">
 
 </form>
 

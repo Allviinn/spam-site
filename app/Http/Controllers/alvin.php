@@ -26,30 +26,56 @@ class alvin extends Controller
     public function numAccueil(Request $request) {
         //au clique sur "voir les commentaires" d'un numéro critique sur la page d'accueil, une requête ajax récupere les commentaires associés
         if($request->ajax()) {
-            $numeroAccueil = $_POST['numero'];
-        
+
+            if(!isset($_POST['minimum']) && !isset($_POST['limit']) && isset($_POST['numero']))
+            {
+                $numeroAccueil = $_POST['numero'];
             
-            $spam_auteursA = new spam_auteurs;   
-            $spam_commentairesA = new spam_commentaires;
-            $spam_numerosA = new spam_numeros;
+                $spam_auteursA = new spam_auteurs;   
+                $spam_commentairesA = new spam_commentaires;
+                $spam_numerosA = new spam_numeros;
+    
+                $numerosA = $spam_numerosA::select('*')->where('numero', $numeroAccueil)->first();
+                $idNumeroA = $numerosA->id;
+                
+                $auteurA = $spam_auteursA::
+                join('spam_commentaires','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
+                ->select('*', 'spam_commentaires.id AS id')
+                ->where('spam_commentaires.id_spam_numeros',$idNumeroA)
+                ->limit(5)
+                ->get();
+    
+                return response()->json(array('auteursA' => $auteurA));
 
-            $numerosA = $spam_numerosA::select('*')->where('numero', $numeroAccueil)->first();
-            $idNumeroA = $numerosA->id;
+            } else if (isset($_POST['minimum']) && isset($_POST['limit']) && isset($_POST['numero'])) 
+            {
+
+                $numeroAccueil = $_POST['numero'];
+                $minimum = $_POST['minimum'];
+                $limit = $_POST['limit'];
             
-            $auteurA = $spam_auteursA::
-            join('spam_commentaires','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
-            ->select('*', 'spam_commentaires.id AS id')
-            ->where('spam_commentaires.id_spam_numeros',$idNumeroA)
-            ->limit(5)
-            ->get();
+                $spam_auteursA = new spam_auteurs;   
+                $spam_commentairesA = new spam_commentaires;
+                $spam_numerosA = new spam_numeros;
+    
+                $numerosA = $spam_numerosA::select('*')->where('numero', $numeroAccueil)->first();
+                $idNumeroA = $numerosA->id;
+                
+                $auteurA = $spam_auteursA::
+                join('spam_commentaires','spam_commentaires.id_spam_auteurs','=','spam_auteurs.id')
+                ->select('*', 'spam_commentaires.id AS id')
+                ->where('spam_commentaires.id_spam_numeros',$idNumeroA)
+                ->skip($minimum)
+                ->take($limit)
+                ->get();
 
-       
+                
+    
+                return response()->json(array('auteursA' => $auteurA));
 
-            return response()->json(array('auteursA' => $auteurA));
+            }
             
         }
-
-        
 
     }
 
