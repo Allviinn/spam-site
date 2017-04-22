@@ -32,7 +32,7 @@
         	<div class="row">
         		<div id="logo" class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-0 col-lg-5"><img src="graphisme/graphismes/images/logo-rouge.png"></div>
 
-        		<div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-2 col-lg-5" id="aProposP"><p>Spaminator s’adresse aux personnes régulièrement importunées par des appels téléphoniques ou SMS appelés SPAMS, 
+        		<div class="col-12 offset-sm-1 col-sm-10 offset-md-2 col-md-8 offset-lg-1 col-lg-5" id="aProposP"><p>Spaminator s’adresse aux personnes régulièrement importunées par des appels téléphoniques ou SMS appelés SPAMS, 
         		et souhaitant les signaler à d’autres utilisateurs. Le site vous permet de rechercher rapidement un numéro de 
         		téléphone afin d’obtenir des informations ou d’ajouter votre commentaire. Vous avez également la possibilité 
         		d’ajouter un numéro afin de compléter la liste actuelle et d’indiquer à d’autres consommateurs les appels ou 
