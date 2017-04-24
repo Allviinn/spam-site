@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
      <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     
-
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <script type="text/javascript" src="{{ URL::to('js/ibtissem.js') }}"></script>
 <script src='https://www.google.com/recaptcha/api.js'></script>
 
