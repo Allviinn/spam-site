@@ -192,7 +192,8 @@ $('#signaler').on('click', function(event){
                 success:function(data){
                   console.log(data)
                      $('#reponseSignal').css('display', 'block');
-                      
+                      $('#textAutreRaison').css({'opacity': '0'});
+                    $('#textAutreRaison').animate({'height': '0px'});
                       setTimeout(function(){ 
 
                           $('#reponseSignal').css('display', 'none'); 
