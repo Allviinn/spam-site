@@ -2,7 +2,7 @@
 	position: absolute;
 	width: 80%;
 	left: 10%;
-	top: 20%;
+	top: 5%;
 	background-color: white;
 	border-radius: 5px;
 	text-align: center;
@@ -13,9 +13,11 @@
 }
 
 #divFormSignal h5 {
+	margin-top: 0;
 	margin-bottom: 20px;
 	text-align: center;
 	color: #5e000e;
+	font-size: 1.25em;
 }
 
 

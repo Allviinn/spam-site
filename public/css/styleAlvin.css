@@ -1,6 +1,8 @@
 body {
 	margin: 0px;
 	padding: 0px;
+
+  font-family: Arial, sans-serif;
 }
 
 
@@ -230,7 +232,7 @@ header a:hover {
 	position: absolute;
 	width: 80%;
 	left: 10%;
-	top: 20%;
+	top: 5%;
 	background-color: white;
 	border-radius: 5px;
 	text-align: center;
@@ -244,6 +246,7 @@ header a:hover {
 	margin-bottom: 20px;
 	text-align: center;
 	color: #5e000e;
+	font-weight: bold;
 }
 
 
