@@ -12,7 +12,9 @@
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
-  <title>Résultat de votre recherche</title>
+  <title>Spaminator</title>
+  <link rel="icon" type="image/png" href="graphisme/graphismes/images/icone-logo-rouge.png" />
+
 </head>
 <body>
 

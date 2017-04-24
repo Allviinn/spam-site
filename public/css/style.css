@@ -110,6 +110,12 @@ span {
     display: inline-block;
 }
 
+@media all and (max-width: 576px) {
+    body {
+        background-image: none;
+    }
+}
+
 
 @media all and (min-width: 992px) {
     /* largeur mobile */

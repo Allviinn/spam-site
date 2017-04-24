@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Spaminator</title>
+    <link rel="icon" type="image/png" href="graphisme/graphismes/images/icone-logo-rouge.png" />
+
 	<meta charset="utf-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="{{ URL::to('css/a_propos.css') }}">
